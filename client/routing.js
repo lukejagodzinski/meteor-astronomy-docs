@@ -2,16 +2,22 @@ Router.configure({
   layoutTemplate: 'Layout'
 });
 
-var ucfirst = function(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-};
+Router.route('/', function() {
+  var section = Sections.findOne();
+  Router.go('/' + section.get('slug'));
 
-Router.route('/:page', function() {
-  var segments = this.params.page.split('-');
-  segments = _.map(segments, function(segment) {
-    return ucfirst(segment);
+  this.next();
+});
+
+Router.route('/:slug?', function() {
+  var section = Sections.findOne({
+    slug: this.params.slug
   });
-  var templateName = segments.join('');
 
-  this.render(templateName);
+  if (section) {
+    Session.set('title', section.title);
+    this.render(section.template);
+  }
+
+  this.next();
 });

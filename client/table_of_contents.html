@@ -1,0 +1,11 @@
+<template name="TableOfContents">
+  <ul>
+    {{#each sections}}
+      {{> Section}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="Section">
+  <li class="depth-{{depth}} {{selected}}"><a href="{{slug}}">{{title}}</a></li>
+</template>

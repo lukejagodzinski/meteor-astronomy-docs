@@ -1,5 +1,17 @@
 <template name="Layout">
-  <div class="container">
-    {{> yield}}
+  <div id="sidebar">
+    <div id="logo">
+      <a href="/">
+        <img src="logo.png" alt="Meteor Astronomy Logo" />
+      </a>
+      <div class="version">0.13.0 documentation</div>
+    </div>
+    {{> TableOfContents}}
+  </div>
+  <div id="container">
+    {{> Title}}
+    <div id="content">
+      {{> yield}}
+    </div>
   </div>
 </template>

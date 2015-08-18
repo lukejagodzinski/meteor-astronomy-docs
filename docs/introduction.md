@@ -1,6 +1,4 @@
 {{#template name='Introduction'}}
-## Introduction
-
 When fetching objects from Mongo Collections, you get simple JavaScript objects without any logic. You have to implement logic, validate attributes, check what fields have changed, save only modified fields, transform field types when reading data from forms etc. in every place you are using them. Wouldn't it be great if you could write code just like below?
 
 ```js

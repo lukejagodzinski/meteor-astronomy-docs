@@ -1,0 +1,176 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #3c3c3c;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+#logo {
+  margin: 25px;
+
+  img {
+    width: 220px;
+  }
+
+  .version {
+    font-size: 1em;
+  }
+}
+
+#title {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  font-size: 2em;
+  font-weight: 300;
+  margin: 0;
+  padding: 0 50px;
+  background-color: rgba(255,255,255,0.95);
+  border-bottom: 1px solid #f0f0f0;
+  color: #000000;
+}
+
+#sidebar {
+  display: block;
+  position: fixed;
+  background-color: #e9e9e9;
+  width: 270px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  a, a:link, a:hover, a:active, a:visited {
+    text-decoration: none;
+    color: #3c3c3c;
+  }
+
+  a:hover, a:active {
+    color: #de4f4f;
+  }
+
+  ul {
+    list-style: none;
+    margin: 25px;
+    padding: 0;
+
+    .selected > a {
+      font-weight: 400;
+      color: #de4f4f;
+    }
+
+    .depth-1 {
+      margin-left: 0px;
+    }
+
+    .depth-2 {
+      margin-left: 15px;
+    }
+
+    .depth-3 {
+      margin-left: 30px;
+    }
+
+    .depth-4 {
+      margin-left: 45px;
+    }
+
+    .depth-5 {
+      margin-left: 60px;
+    }
+  }
+}
+
+#container {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+#content {
+  margin-top: 80px;
+  padding: 50px;
+  max-width: 920px;
+
+  p {
+    text-align: justify;
+  }
+}
+
+@media (min-width: 768px) {
+  #sidebar {
+    width: 270px;
+  }
+
+  #container {
+    width: auto;
+    left: 270px;
+  }
+
+  #content {
+  }
+}
+
+code {
+  overflow-x: auto
+}
+
+.hljs {
+  display: block;
+  padding: 1em;
+  background-color: #272b33;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+  color: #aab0bd;
+
+  .hljs-keyword {
+    color: #c479db;
+  }
+
+  .hljs-built_in {
+    color: #57b7c2;
+  }
+
+  .hljs-string {
+    color: #99c27a;
+  }
+
+  .hljs-number {
+    color: #cf9865;
+  }
+
+  .hljs-comment {
+    color: #5b626e;
+  }
+}

@@ -9,5 +9,6 @@ autopublish
 insecure
 simple:markdown-templating
 less
-nemo64:bootstrap
 iron:router
+jagi:astronomy
+jagi:astronomy-slug-behavior

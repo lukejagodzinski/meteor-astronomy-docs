@@ -25,6 +25,9 @@ iron:location@1.0.9
 iron:middleware-stack@1.0.9
 iron:router@1.0.9
 iron:url@1.0.9
+jagi:astronomy@0.12.1
+jagi:astronomy-behaviors@0.6.0
+jagi:astronomy-slug-behavior@0.3.1
 jquery@1.11.3_2
 json@1.0.3
 launch-screen@1.0.2
@@ -38,8 +41,6 @@ minifiers@1.1.5
 minimongo@1.0.8
 mobile-status-bar@1.0.3
 mongo@1.1.0
-nemo64:bootstrap@3.3.5_2
-nemo64:bootstrap-data@3.3.5
 observe-sequence@1.0.6
 ordered-dict@1.0.3
 random@1.0.3

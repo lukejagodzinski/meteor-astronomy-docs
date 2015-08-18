@@ -1,6 +1,4 @@
 {{#template name='WhyUseAstronomy'}}
-## Why use Astronomy?
-
 There are many other packages that implement some of the functionality in Astronomy. I will try to point out here the main benefits of using Astronomy over other solutions.
 
 - Besides having many features that are listed in the [Features](#features) section...
