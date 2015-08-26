@@ -1,8 +1,6 @@
 var data = [
-  'Introduction',
-  'History',
-  'Why use Astronomy?',
-  'Installation',
+  'What is Astronomy?',
+  'Getting started',
   'Features',
   'Planned features',
   'Changelog',
@@ -57,9 +55,9 @@ Section = Astro.Class({
   name: 'Section',
   collection: Sections,
   fields: {
-    title: 'String',
-    depth: 'Number',
-    template: 'String'
+    title: 'string',
+    depth: 'number',
+    template: 'string'
   },
   events: {
     beforeInsert: function() {
