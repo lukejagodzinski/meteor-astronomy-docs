@@ -41,15 +41,12 @@ h3 {
 }
 
 #title {
-  position: fixed;
-  width: 100%;
   height: 80px;
   line-height: 80px;
   font-size: 2em;
   font-weight: 300;
   margin: 0;
   padding: 0 50px;
-  background-color: rgba(255,255,255,0.95);
   border-bottom: 1px solid #f0f0f0;
   color: #000000;
 }
@@ -116,10 +113,10 @@ h3 {
   bottom: 0;
   z-index: 1;
   box-sizing: border-box;
+  overflow-y: auto;
 }
 
 #content {
-  margin-top: 80px;
   padding: 50px;
   max-width: 920px;
 
@@ -143,34 +140,48 @@ h3 {
 }
 
 code {
-  overflow-x: auto
+  overflow-x: auto;
+  margin: 0;
+  padding: 0.2em 0.4em;
+  font-size: 85%;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  border: 1px solid #f0f0f0;
 }
 
 .hljs {
   display: block;
+  line-height: 1.45;
+  background-color: #f7f7f7;
   padding: 1em;
-  background-color: #272b33;
   font-family: "Roboto Mono", monospace;
   font-weight: 300;
-  color: #aab0bd;
 
-  .hljs-keyword {
-    color: #c479db;
+  &.sh {
+    .hljs-built_in {
+      color: #0086b3;
+    }
   }
 
-  .hljs-built_in {
-    color: #57b7c2;
-  }
+  &.js {
+    .hljs-keyword {
+      color: #c479db;
+    }
 
-  .hljs-string {
-    color: #99c27a;
-  }
+    .hljs-built_in {
+      color: #57b7c2;
+    }
 
-  .hljs-number {
-    color: #cf9865;
-  }
+    .hljs-string {
+      color: #99c27a;
+    }
 
-  .hljs-comment {
-    color: #5b626e;
+    .hljs-number {
+      color: #cf9865;
+    }
+
+    .hljs-comment {
+      color: #5b626e;
+    }
   }
 }
