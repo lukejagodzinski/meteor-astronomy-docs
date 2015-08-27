@@ -1,0 +1,29 @@
+<template name="Contents">
+  <div id="content">
+    {{#each sections}}
+      {{> Content}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="Content">
+  {{#if depthIs 1}}
+    <h1 id="{{slug}}">{{title}}</h1>
+  {{/if}}
+  {{#if depthIs 2}}
+    <h2 id="{{slug}}">{{title}}</h2>
+  {{/if}}
+  {{#if depthIs 3}}
+    <h3 id="{{slug}}">{{title}}</h3>
+  {{/if}}
+  {{#if depthIs 4}}
+    <h4 id="{{slug}}">{{title}}</h4>
+  {{/if}}
+  {{#if depthIs 5}}
+    <h5 id="{{slug}}">{{title}}</h5>
+  {{/if}}
+  {{#if depthIs 6}}
+    <h6 id="{{slug}}">{{title}}</h6>
+  {{/if}}
+  {{> Template.dynamic template=template}}
+</template>

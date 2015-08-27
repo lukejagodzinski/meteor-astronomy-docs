@@ -1,48 +1,23 @@
 var data = [
   'What is Astronomy?',
-  'Getting started',
   'Features',
-  'Planned features',
-  'Changelog',
-  'Examples',
+  'Getting started',
+  'Key concepts',
   [
-    'Key concepts',
-    [
-      'Defining a schema',
-      [
-        'Transformation',
-        'Constructor',
-        'Fields',
-        [
-          'Types',
-          'Default values',
-          'Nested fields NEW in 0.10.5',
-          'Custom types',
-          'Setters and getters',
-          'Modified fields'
-        ],
-        'Methods',
-        'Cloning',
-        'EJSON-ification',
-        'Reactivity and reloading',
-        'Saving, updating and removing',
-        'Events',
-        [
-          'Storage events',
-          'Field events',
-          'Global events',
-          'Class event',
-          'Instance event',
-          'Events propagation',
-        ],
-        'Indexes',
-        'Inheritance',
-      ],
-      'Modules'
-    ],
+    'Defining fields',
+    'Setting and getting values',
+    'Saving, updating and removing',
+    'Documents fetching',
+    'Events system',
+    'Indexes',
+    'Inheritance'
   ],
-  'Contribution',
-  'License',
+  'Advanced usage',
+  [
+    'Creating custom types',
+    'Writing modules',
+    'Writing behaviors'
+  ]
 ];
 
 Sections = new Mongo.Collection(null);
@@ -58,6 +33,11 @@ Section = Astro.Class({
     title: 'string',
     depth: 'number',
     template: 'string'
+  },
+  methods: {
+    depthIs: function(depth) {
+      return this.get('depth') === depth;
+    }
   },
   events: {
     beforeInsert: function() {

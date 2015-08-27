@@ -14,7 +14,7 @@ meteor add jagi:astronomy
 
 You're ready to go.
 
-# Creating a first class
+**Creating a first class**
 
 We'll start from showing the simplest possible class implementation.
 
@@ -73,7 +73,7 @@ post.save();
 
 In the listing above, we just fetch previously saved document and modified its title using the `set` function. After calling the `save` method only the title of the document will be updated in the database.
 
-# Adding validation
+**Adding validation**
 
 Astronomy is highly modularized. By adding the `jagi:astronomy` package to your project you're only adding the basic functionalities. The validation feature is a separate module. To add it to the project you have to type in the console:
 
@@ -116,7 +116,7 @@ if (post.validate()) {
 
 The `validate` method will return false if any of the fields didn't pass validation rules.
 
-# What next?
+**What's next?**
 
 It was a brief introduction that covered only a tiny portion of Astronomy features. If you want to read more about Astronomy please take a look at the other sections in this documentation.
 

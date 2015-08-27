@@ -9,6 +9,5 @@ autopublish
 insecure
 simple:markdown-templating
 less
-iron:router
 jagi:astronomy
 jagi:astronomy-slug-behavior

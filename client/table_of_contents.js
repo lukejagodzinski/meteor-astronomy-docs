@@ -6,7 +6,12 @@ Template.TableOfContents.helpers({
 
 Template.Section.helpers({
   selected: function() {
-    var route = Router.current();
-    return route.params.slug === this.slug ? 'selected' : '';
+    return this.get('slug') === Session.get('hash') ? 'selected' : '';
   }
-})
+});
+
+Template.Section.events({
+  'click a': function(e) {
+    Session.set('hash', this.get('slug'));
+  }
+});
