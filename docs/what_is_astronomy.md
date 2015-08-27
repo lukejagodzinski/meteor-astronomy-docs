@@ -84,10 +84,6 @@ There are many other packages that implement some of the functionalities present
 
 [roelvan](https://github.com/jagi/meteor-astronomy/issues/1#issuecomment-91836156)
 
-> Thanks for creating an amazing package. I would request you to add two way data binding.
-
-[ansarizafar](https://github.com/jagi/meteor-astronomy/issues/1#issue-67508011)
-
 > Thanks - this has the makings of an amazing tool.... I'm hoping to replace Mesosphere, collection-hooks, collection-helpers, and a bunch of custom code - all with a cleaner code base!
 
 [dovrosenberg](https://github.com/jagi/meteor-astronomy/issues/11#issuecomment-107089733)

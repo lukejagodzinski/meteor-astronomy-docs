@@ -1,0 +1,25 @@
+<template name="Title">
+  <div id="title">
+    {{#with section}}
+      {{#if depthIs 1}}
+        <h1>{{title}}</h1>
+      {{/if}}
+      {{#if depthIs 2}}
+        <h2>{{title}}</h2>
+      {{/if}}
+      {{#if depthIs 3}}
+        <h3>{{title}}</h3>
+      {{/if}}
+      {{#if depthIs 4}}
+        <h4>{{title}}</h4>
+      {{/if}}
+      {{#if depthIs 5}}
+        <h5>{{title}}</h5>
+      {{/if}}
+      {{#if depthIs 6}}
+        <h6>{{title}}</h6>
+      {{/if}}
+    {{/with}}
+    <div id="progress"></div>
+  </div>
+</template>
