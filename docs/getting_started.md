@@ -81,7 +81,7 @@ Astronomy is highly modularized. By adding the `jagi:astronomy` package to your 
 meteor add jagi:astronomy-validators
 ```
 
-_NOTE: There's also the [Simple Validators](https://atmospherejs.com/jagi/astronomy-simple-validators) package that's much easier to use but has limited functionality._
+*NOTE: There's also the [Simple Validators](https://atmospherejs.com/jagi/astronomy-simple-validators) package that's much easier to use but has limited functionality.*
 
 Let's define some validation rules in our class.
 

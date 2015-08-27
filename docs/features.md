@@ -76,13 +76,13 @@ The Simple Validators module is an extension of the Validators module. It just a
 
 **Relations**
 
-_NOTE: This module is a work in progress and you're using it at your own risk._
+*NOTE: This module is a work in progress and you're using it at your own risk.*
 
 The Relations module allows defining relations between documents of different classes. Thanks to that, we can easily fetch related documents. We can create one to one, one to many, and many to many relations. To use this module you have to add it to your project `meteor add jagi:astronomy-relations`.
 
 **Query Builder**
 
-_NOTE: This module is a work in progress and you're using it at your own risk._
+*NOTE: This module is a work in progress and you're using it at your own risk.*
 
 The Query Builder module is an abstraction layer for accessing data in your database. To use this module you have to add it to your project `meteor add jagi:astronomy-query-builder`.
 

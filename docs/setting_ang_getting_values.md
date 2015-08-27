@@ -1,3 +1,33 @@
 {{#template name="SettingAndGettingValues"}}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Every Astronomy class has the setter `set()` and the getter `get()` methods. You should always use the `set()` method to set values. If it goes about the `get()` method, it's good to also use it wherever you can. However, in such places like templates you can access fields directly. Take a look at the example.
+
+```js
+// ANTI-EXAMPLE
+var user = new User();
+user.age = $('#age').value; // WRONG! Never do that!
+```
+
+In the example above, we assigned value from the input to the `age` field. The type of the `age` field is `number` and in this situation we assigned string value. It won't be converted to the number. Now, take a look at the correct example.
+
+```js
+var user = new User();
+user.set('age', $('#age').value);
+```
+
+Now, the value will be converted to the number.
+
+The usage of the `get` method is similar.
+
+```js
+var user = new User();
+user.age; // Permitted but not recommended.
+user.get('age'); // It's much better!
+```
+
+As said earlier, you can access fields directly in templates.
+
+```javascript
+<div>Age: {{user.age}}</div>
+```
+
 {{/template}}
