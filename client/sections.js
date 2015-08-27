@@ -6,15 +6,15 @@ var data = [
   [
     'Defining fields',
     'Setting and getting values',
-    'Saving, updating and removing',
-    'Documents fetching',
+    'Saving and removing',
+    'Fetching documents',
     'Events system',
     'Indexes',
     'Inheritance'
   ],
   'Advanced usage',
   [
-    'Creating custom types',
+    'Custom types',
     'Writing modules',
     'Writing behaviors'
   ]

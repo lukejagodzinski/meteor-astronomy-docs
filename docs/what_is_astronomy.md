@@ -50,6 +50,48 @@ if (post.validate()) {
 
 What approach is simpler? I think, the choice is obvious.
 
+**Why should I use it?**
+
+There are many other packages that implement some of the functionalities present in Astronomy. I will try to point out here the main benefits of using Astronomy over other solutions, besides having many features that are listed in the [Features](#features) section.
+
+- Astronomy is highly modularized. This was one of the main principles when creating it. Thanks to that, anyone can easily hook into almost every process that happens in Astronomy. Developers can create their own modules, behaviors and validators.
+- It's easy to learn and use. Astronomy does not reinvent the wheel. It takes the best from the tools you are already familiar with, not only from the JavaScript world, but also from other languages.
+- When using Astronomy, you can easily replace three to five packages that you already use with a single one that follows the same pattern across all its modules. The main principle is simplicity.
+- It follows quite different principles to do the job that other packages do. Thanks to that the amount of code you have to write to setup your classes and create application logic is significantly lower.
+- There are many developers who already use it and are very happy that they moved to Astronomy. I allowed myself to post some of their comments here:
+
+> If this package were around when I created SimpleSchema, I would have used it instead of creating SimpleSchema.
+
+[Eric Dobbertin, author of SimpleSchema](https://github.com/jagi/meteor-astronomy/issues/27#issuecomment-110996499)
+
+> I love your package, it's really great [...] as RoR developer, this package is really exciting!
+
+[rsignavong](https://gitter.im/jagi/meteor-astronomy/archives/2015/05/22)
+
+> Anyway, very happy to have moved to astronomy, really like it we will release an app using it soon, so I will let you know.
+
+[banglashi](https://gitter.im/jagi/meteor-astronomy/archives/2015/05/20)
+
+> I still don't understand how this package is not getting more popular imho this package is better than simple-schema.
+
+[dstollie](https://crater.io/comments/CQTsP4SNabfquv4ds)
+
+> Amazing work, beautifully designed package! Anyone give this package few seconds and take a look at sources? If people will write code in such clean and modular way, world would be better! Kudos Jagi!
+
+[Kuba Wyrobek](https://crater.io/comments/BY9Qn9f4DKHFFuBp5)
+
+> Amazing package indeed! Coming from a php MVC background, this package is a gift :). You rock!
+
+[roelvan](https://github.com/jagi/meteor-astronomy/issues/1#issuecomment-91836156)
+
+> Thanks for creating an amazing package. I would request you to add two way data binding.
+
+[ansarizafar](https://github.com/jagi/meteor-astronomy/issues/1#issue-67508011)
+
+> Thanks - this has the makings of an amazing tool.... I'm hoping to replace Mesosphere, collection-hooks, collection-helpers, and a bunch of custom code - all with a cleaner code base!
+
+[dovrosenberg](https://github.com/jagi/meteor-astronomy/issues/11#issuecomment-107089733)
+
 **History**
 
 The idea of creating a package for Meteor that would introduce a Model Layer emerged after creating several simple Meteor applications. I noticed that I was constantly repeating the same parts of a code to manage documents' storage and validation. It was frustrating in comparison to what I've accustomed to in the [Doctrine](http://www.doctrine-project.org/) library for [PHP](https://php.net/) language that I had used for many years.
@@ -61,5 +103,4 @@ In the late 2014, I decided to give it one more try and implement a much better 
 **Why the name "Astronomy"?**
 
 As almost everything, that is Meteor-related, has some space-related name. This one couldn't be an exception. The model layer in the MVC pattern is a description of real objects. And, the science describing objects in space is called [Astronomy](http://en.wikipedia.org/wiki/Astronomy). The choice was quick.
-{{/template}}
 {{/template}}

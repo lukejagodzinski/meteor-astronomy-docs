@@ -4,7 +4,7 @@ Astronomy is highly modularized. Some basic features comes with the base `jagi:a
 
 **Document transformation**
 
-Documents fetched from collections are not simple JavaScript objects but instances of the class you've created.
+Documents fetched from collections are not simple JavaScript objects but instances of a class you've created.
 
 **Field's type**
 

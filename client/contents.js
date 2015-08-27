@@ -3,7 +3,3 @@ Template.Contents.helpers({
     return Sections.find();
   }
 });
-
-Template.Contents.rendered =  function() {
-  navigate();
-};
