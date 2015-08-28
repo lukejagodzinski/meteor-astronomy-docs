@@ -26,8 +26,7 @@ user.get('age'); // It's much better!
 
 As said earlier, you can access fields directly in templates.
 
-```javascript
-<div>Age: {{user.age}}</div>
+```html
+<div>Age: {{|user.age}}</div>
 ```
-
 {{/template}}
