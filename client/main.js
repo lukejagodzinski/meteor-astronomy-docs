@@ -71,6 +71,11 @@ Template.body.onRendered(function() {
   } else {
     tmpl.setHash(tmpl.getHashFromPosition());
   }
+
+  $(window).on('resize', _.throttle(function(e) {
+    tmpl.setHash(tmpl.getHashFromPosition());
+    tmpl.setProgress(tmpl.getProgressFromPosition());
+  }, 1000 / 10));
 });
 
 Template.body.events({
