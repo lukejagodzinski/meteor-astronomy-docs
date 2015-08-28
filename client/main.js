@@ -55,8 +55,8 @@ Template.body.onRendered(function() {
     var currIdx = Math.max(0, Math.min(anchors.length, nextIdx - 1));
     var nextAnchor = anchors[nextIdx];
     var currAnchor = anchors[currIdx];
-    var progress = Math.round((container.scrollTop - currAnchor.offsetTop) /
-      (nextAnchor.offsetTop - currAnchor.offsetTop) * 100);
+    var progress = (container.scrollTop - currAnchor.offsetTop) /
+      (nextAnchor.offsetTop - currAnchor.offsetTop) * 100;
     return progress;
   };
 
