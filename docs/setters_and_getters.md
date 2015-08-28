@@ -1,7 +1,7 @@
 {{#template name="SettersAndGetters"}}
 Every Astronomy class has `set()` and `get()` methods. As their names imply, they're responsible for setting and getting values from a document.
 
-**Setters**
+**Setting a single value**
 
 You should always use the `set()` method to set values. Take a look at the example of a wrong assignment.
 
@@ -100,7 +100,7 @@ var user = new User({
 });
 ```
 
-**Getters**
+**Getting a single value**
 
 It's good to use the `get()` method wherever you have to retrieve a value from a document, however it's not obligatory. Let's take a look at the example.
 
@@ -200,4 +200,34 @@ With the first solution, you're already familiar.
 It the second solution, we access the `address` field directly and execute the `get` method on it. It's possible because the value of the `address` field is an instance of the `Address` class and this class also has the `get` method.
 
 In the third approach, we first get a value of the `address` field and then execute the `get` method.
+
+**Getting modified fields**
+
+An Astronomy document is aware of its state. It knows if it's new document or the document that is already stored in the database. It also knows what fields have been modified from the last save operation. The `getModfied()` method responsible for getting modified fields.
+
+```js
+user.get('firstName'); // "Luke"
+
+/* ... */
+
+user.set({
+  firstName: 'John'
+});
+
+user.getModified(); // Returns {firstName: "John"}
+```
+
+The method returns an object of key-value pairs where the key is a field name and the value is a new field value. But what, if we want to retrieve the old values, before the modification? You just have to pass `true` as the first argument of the `getModified` method.
+
+```js
+user.get('firstName'); // "Luke"
+
+/* ... */
+
+user.set({
+  firstName: 'John'
+});
+
+user.getModified(true); // Returns {firstName: "Luke"}
+```
 {{/template}}
