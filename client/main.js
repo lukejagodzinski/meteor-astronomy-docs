@@ -61,7 +61,13 @@ Template.body.onRendered(function() {
   };
 
   if (window.location.hash) {
-    window.location.replace(Meteor.absoluteUrl() + window.location.hash);
+    if (Sections.find({
+      slug: window.location.hash.slice(1)
+    }).count()) {
+      window.location.replace(Meteor.absoluteUrl() + window.location.hash);
+    } else {
+      tmpl.setHash(tmpl.getHashFromPosition());
+    }
   } else {
     tmpl.setHash(tmpl.getHashFromPosition());
   }

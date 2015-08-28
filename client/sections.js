@@ -5,7 +5,7 @@ var data = [
   'Key concepts',
   [
     'Defining fields',
-    'Setting and getting values',
+    'Setters and getters',
     'Saving and removing',
     'Fetching documents',
     'Events system',
