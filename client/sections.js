@@ -37,6 +37,9 @@ Section = Astro.Class({
   methods: {
     depthIs: function(depth) {
       return this.get('depth') === depth;
+    },
+    getHash: function() {
+      return '#' + this.get('slug');
     }
   },
   events: {

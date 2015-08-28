@@ -6,48 +6,70 @@ $(window).on('hashchange', function() {
 Template.body.onRendered(function() {
   var tmpl = this;
 
-  window.location.replace(Meteor.absoluteUrl() + window.location.hash);
-
   var container = tmpl.find('#container');
   var anchors = tmpl.findAll('#content [id]');
-  var progress = tmpl.find('#progress');
+  var progressBar = tmpl.find('#progress');
 
-  tmpl.changeHash = function(hash) {
+  tmpl.setHash = function(hash, scroll) {
+    scroll = _.isUndefined(scroll) ? false : scroll;
     if (hash !== window.location.hash) {
-      var currPos = container.scrollTop;
+      if (!scroll) {
+        var currPos = container.scrollTop;
+      }
       window.location.replace(Meteor.absoluteUrl() + hash);
-      // tmpl.overlayHeader();
-      container.scrollTop = currPos;
+      if (!scroll) {
+        container.scrollTop = currPos;
+      }
     }
   };
 
+  tmpl.setProgress = function(progress) {
+    progressBar.style.width = progress + '%';
+  };
+
   tmpl.getHashFromPosition = function() {
-    var hash;
-    anchors.every(function(anchor, i) {
+    var nextIdx = 0;
+    anchors.every(function(anchor, idx) {
       if (anchor.offsetTop > container.scrollTop) {
-        var nextIdx = i;
-        var currIdx = Math.max(0, Math.min(anchors.length, i - 1));
-        var nextAnchor = anchors[nextIdx];
-        var currAnchor = anchors[currIdx];
-        var prog = ((container.scrollTop - currAnchor.offsetTop) /
-          (nextAnchor.offsetTop - currAnchor.offsetTop) * 100).toFixed(2);
-        progress.style.width = prog + '%';
-        hash = '#' + currAnchor.id;
+        nextIdx = idx;
         return false;
       }
       return true;
     });
+    var currIdx = Math.max(0, Math.min(anchors.length, nextIdx - 1));
+    var currAnchor = anchors[currIdx];
+    var hash = '#' + currAnchor.id;
     return hash;
   };
 
-  tmpl.calculateProgres = function() {
-    var hash = Session.get('hash');
+  tmpl.getProgressFromPosition = function() {
+    var nextIdx = 0;
+    var currIdx = 0;
+    anchors.every(function(anchor, idx) {
+      if (anchor.offsetTop > container.scrollTop) {
+        nextIdx = idx;
+        return false;
+      }
+      return true;
+    });
+    var currIdx = Math.max(0, Math.min(anchors.length, nextIdx - 1));
+    var nextAnchor = anchors[nextIdx];
+    var currAnchor = anchors[currIdx];
+    var progress = Math.round((container.scrollTop - currAnchor.offsetTop) /
+      (nextAnchor.offsetTop - currAnchor.offsetTop) * 100);
+    return progress;
   };
+
+  if (window.location.hash) {
+    window.location.replace(Meteor.absoluteUrl() + window.location.hash);
+  } else {
+    tmpl.setHash(tmpl.getHashFromPosition());
+  }
 });
 
 Template.body.events({
   'scroll #container': _.throttle(function(e, tmpl) {
-    var hash = tmpl.getHashFromPosition();
-    tmpl.changeHash(hash);
+    tmpl.setHash(tmpl.getHashFromPosition());
+    tmpl.setProgress(tmpl.getProgressFromPosition());
   }, 1000 / 10)
 });
