@@ -8,6 +8,7 @@ var data = [
     'Setters and getters',
     'Saving and removing',
     'Fetching documents',
+    'Methods',
     'Events system',
     'Indexes',
     'Inheritance'
