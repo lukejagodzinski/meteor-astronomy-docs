@@ -65,7 +65,7 @@ User = Astro.Class({
   /* */
   embedOne: {
     address: {
-      class: 'Address', // Class provided.
+      nested: 'Address', // Class provided.
       default: function() {
         return {};
       }
@@ -173,7 +173,7 @@ User = Astro.Class({
   /* */
   embedOne: {
     address: {
-      class: 'Address', // Class provided.
+      nested: 'Address', // Class provided.
       default: function() {
         return {};
       }

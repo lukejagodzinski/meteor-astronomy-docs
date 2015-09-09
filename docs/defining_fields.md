@@ -122,7 +122,7 @@ User = Astro.Class({
   embedOne: {
     address: {
       // The "address" field can store an instance of the Address class.
-      class: 'Address'
+      nested: 'Address'
     }
   },
   fields: {
@@ -143,7 +143,7 @@ User = Astro.Class({
   embedMany: { // No we embed many documents in an array.
     addresses: {
       // The "addresses" field can store many instances of the Address class.
-      class: 'Address'
+      nested: 'Address'
     }
   }
 });
@@ -157,7 +157,7 @@ User = Astro.Class({
   collection: Users,
   embedOne: {
     address: {
-      class: 'Address',
+      nested: 'Address',
       default: function() {
         return {
           city: 'Miami',
@@ -194,10 +194,10 @@ if (Meteor.isServer) {
     }
   });
   User.embedOne('address', {
-    class: 'Address'
+    nested: 'Address'
   });
   User.embedMany('phones', {
-    class: 'Phone'
+    nested: 'Phone'
   });
 }
 ```
