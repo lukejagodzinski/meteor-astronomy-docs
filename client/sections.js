@@ -5,7 +5,23 @@ var data = [
   'Key concepts',
   [
     'Defining fields',
-    'Setters and getters',
+    [
+      'Simple fields list',
+      'Fields with types',
+      'Default values',
+      'Transient fields',
+      'Immutable fields',
+      'Nested fields',
+      'Fields per environment'
+    ],
+    'Modyfing documents',
+    [
+      'Set',
+      'Push',
+      'Pop',
+      'Inc',
+      'Get'
+    ],
     'Saving and removing',
     'Fetching documents',
     'Methods',

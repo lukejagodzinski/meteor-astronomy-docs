@@ -14,9 +14,9 @@ meteor add jagi:astronomy
 
 You're ready to go.
 
-**Creating a first class**
+**Creating the first class**
 
-We'll start from showing the simplest possible class implementation.
+We'll start by showing the simplest possible class implementation.
 
 ```js
 Posts = new Mongo.Collection('posts');
@@ -35,7 +35,7 @@ Now, we can create an instance of the `Post` class.
 var post = new Post();
 ```
 
-Our class is very simple and right now doesn't make our lives easier. It doesn't have any fields, so let's change it.
+Our class is very simple and right now it doesn't make your live easier. It doesn't have any fields, so let's change that.
 
 ```js
 Post = Astro.Class({
@@ -51,7 +51,8 @@ Post = Astro.Class({
 Now, we have the class with the two fields: `title` and `publishedAt`. The type of the `title` field is `string` and the type of the `publishedAt` field is `date`. Let's create an instance of the class and fill it with some values.
 
 ```js
-var post = new Post({
+var post = new Post();
+post.set({
   title: 'Sample title',
   publishedAt: new Date()
 });
@@ -71,11 +72,11 @@ post.set('title', 'New title');
 post.save();
 ```
 
-In the listing above, we just fetch previously saved document and modified its title using the `set` function. After calling the `save` method only the title of the document will be updated in the database.
+In the listing above, we just fetch a previously saved document and modified its title using the `set` function. After calling the `save` method only the title of the document will be updated in the database.
 
 **Adding validation**
 
-Astronomy is highly modularized. By adding the `jagi:astronomy` package to your project you're only adding the basic functionalities. The validation feature is a separate module. To add it to the project you have to type in the console:
+Astronomy is highly modularized. By adding the `jagi:astronomy` package to your project you're only adding the basic functionalities. The validation feature is a separate module. To add it to the project you have to type in the console in your project's directory:
 
 ```sh
 meteor add jagi:astronomy-validators

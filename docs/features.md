@@ -4,35 +4,47 @@ Astronomy is highly modularized. Some basic features comes with the base `jagi:a
 
 **Document transformation**
 
-Documents fetched from collections are not simple JavaScript objects but instances of a class you've created.
+Documents fetched from collections are not simple JavaScript objects but instances of classes defined by you using Astronomy.
 
 **Field's type**
 
-When defining fields list in the class, you can specify their types like `string`, `number`, `boolean` etc. Thanks to that, when setting field's value, it will be automatically casted on the given type.
+When defining fields list, you can specify their types like `string`, `number`, `boolean` etc. Thanks to that, when setting field's value, it will be automatically casted to the given type.
 
 **Field's default value**
 
-On document initialization, you may want to set default values of some fields. In Astronomy it's easy to do. You can also use functions to compute default value.
+On document initialization, you may want to set default values of some fields. In Astronomy it's easy to do. You can also use functions to compute a default value.
 
 **Nested fields / classes**
 
 You can nest one or many classes in a field. Thanks to that you can define types of fields and default values of nested objects and arrays.
 
+**Transient fields**
+
+You can define list of fields that won't be stored in the database. You can use transient fields as normal fields and have all the benefits of Astronomy fields system.
+
+**Immutable fields**
+
+There are situations when you may want to mark field as immutable. Thanks to that, it won't be possible to change field's value once it was saved into the database.
+
 **Document's EJSON-ification**
 
-[EJSON](http://docs.meteor.com/#/full/ejson) is an extension of JSON that supports more types. When sending documents from the client to the server over the DDP protocol (for instance in Meteor methods), they got stringified using the `EJSON.strinigify()` function. Astronomy classes are EJSON compatible, so you can send them over the DDP.
+[EJSON](http://docs.meteor.com/#/full/ejson) is an extension of JSON that supports more types. When sending documents from the client to the server over the DDP protocol (for instance in Meteor methods), they get stringified using the `EJSON.strinigify()` function. Astronomy classes are EJSON compatible, so you can send them over the DDP.
 
 **Methods**
 
-You can define methods in a class, so your document is not only a data storage but "live" thing. Your dog can bark `dog.bark();` and your user can greet you `user.sayHello();`.
+You can define methods, so your document is not only a data storage but "live" thing. A dog can bark `dog.bark();` and a user can greet you `user.sayHello();`.
 
 **Events**
 
-Astronomy implements events system that allows you to hook into many processes happening inside the package. You can hook into process of saving document. Let's say you want to lowercase user's nickname just before saving document. With Astronomy it's simple.
+Astronomy implements events system that allows you to hook into many processes happening inside the package. For example, you can hook into the process of saving document. You may want to lowercase user's nickname just before saving document. With Astronomy it's a piece of cake. Events system also provides you a way to stop event's propagation and to prevent default behavior.
 
 **Getters and setters**
 
 Each Astronomy document has `get()` and `set()` methods. Thanks to them you can get and set multiple fields at once. They can also perform operation on nested properties `user.set('profile.email', 'example@mail.com')`. Moreover, when using them the `beforeGet`, `afterGet`, `beforeSet` and `afterSet` events are triggered and you can hook into the process of getting and setting a value.
+
+**Push, pop, inc operations**
+
+When working with array fields you can easily `push()` and `pop()` values from the array. Astronomy is smart enough to deduce what fields needs updating and execute minimal query to minimize database access. When working with number values you can use the `inc()` method to increment value of the field.
 
 **Modified fields**
 
@@ -40,7 +52,7 @@ Thanks to the `doc.getModified()` method you can access fields that had been mod
 
 **Cloning document**
 
-It allows making copies of documents already stored in the database. You can automatically save a copy or modify it before saving `var copy = post.copy();`.
+It allows making copies of documents already stored in the database. You can automatically save cloned document or modify it before saving `var copy = post.copy();`.
 
 **Reloading document**
 
@@ -56,7 +68,11 @@ When having classes with similar schemas, sometimes it's simpler to create a bas
 
 **Multiple classes in the same collection**
 
-You can store documents of many classes in the same collection. You just have to specify a field responsible for distinguishing what is the given document instance of.
+You can store instances of many classes in the same collection. You just have to tell Astronomy what field will store the class name.
+
+**Direct collection access**
+
+You can perform `insert`, `update`, `upsert` and `remove` operations directly on a collection with all the benefits of Astronomy like default fields' values or types casting.
 
 **Validation**
 
@@ -66,23 +82,19 @@ The Validators module is responsible for making sure that fields' values in your
 
 You can define the order in which validation will take place.
 
-**Validation on direct collection access**
-
-Astronomy gives you a way of performing validation on documents insert and update when directly accessing collection.
-
 **Simple validation**
 
 The Simple Validators module is an extension of the Validators module. It just allows to create validation rules in the form of string instead of functions. However, this approach limits some functionalities. To use this module you have add it to your project `meteor add jagi:astronomy-simple-validators`. You don't have to add the `jagi:astronomy-validators` module when using Simple Validators.
 
 **Relations**
 
-*NOTE: This module is a work in progress and you're using it at your own risk.*
+*NOTE: This is an experimental module and you're using it at your own risk.*
 
 The Relations module allows defining relations between documents of different classes. Thanks to that, we can easily fetch related documents. We can create one to one, one to many, and many to many relations. To use this module you have to add it to your project `meteor add jagi:astronomy-relations`.
 
 **Query Builder**
 
-*NOTE: This module is a work in progress and you're using it at your own risk.*
+*NOTE: This is an experimental module and you're using it at your own risk.*
 
 The Query Builder module is an abstraction layer for accessing data in your database. To use this module you have to add it to your project `meteor add jagi:astronomy-query-builder`.
 
