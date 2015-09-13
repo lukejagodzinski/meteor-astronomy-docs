@@ -6,7 +6,7 @@ $(window).on('hashchange', function() {
 Template.body.onRendered(function() {
   var tmpl = this;
 
-  var container = tmpl.find('#container');
+  var main = tmpl.find('#main');
   var anchors = tmpl.findAll('#content [id]');
   var progressBar = tmpl.find('#progress');
 
@@ -14,11 +14,11 @@ Template.body.onRendered(function() {
     scroll = _.isUndefined(scroll) ? false : scroll;
     if (hash !== window.location.hash) {
       if (!scroll) {
-        var currPos = container.scrollTop;
+        var currPos = main.scrollTop;
       }
       window.location.replace(Meteor.absoluteUrl() + hash);
       if (!scroll) {
-        container.scrollTop = currPos;
+        main.scrollTop = currPos;
       }
     }
   };
@@ -30,7 +30,7 @@ Template.body.onRendered(function() {
   tmpl.getHashFromPosition = function() {
     var nextIdx = 0;
     anchors.every(function(anchor, idx) {
-      if (anchor.offsetTop > container.scrollTop) {
+      if (anchor.offsetTop > main.scrollTop) {
         nextIdx = idx;
         return false;
       }
@@ -46,7 +46,7 @@ Template.body.onRendered(function() {
     var nextIdx = 0;
     var currIdx = 0;
     anchors.every(function(anchor, idx) {
-      if (anchor.offsetTop > container.scrollTop) {
+      if (anchor.offsetTop > main.scrollTop) {
         nextIdx = idx;
         return false;
       }
@@ -55,7 +55,7 @@ Template.body.onRendered(function() {
     var currIdx = Math.max(0, Math.min(anchors.length, nextIdx - 1));
     var nextAnchor = anchors[nextIdx];
     var currAnchor = anchors[currIdx];
-    var progress = (container.scrollTop - currAnchor.offsetTop) /
+    var progress = (main.scrollTop - currAnchor.offsetTop) /
       (nextAnchor.offsetTop - currAnchor.offsetTop) * 100;
     return progress;
   };
@@ -79,8 +79,27 @@ Template.body.onRendered(function() {
 });
 
 Template.body.events({
-  'scroll #container': _.throttle(function(e, tmpl) {
+  'scroll #main': _.throttle(function(e, tmpl) {
     tmpl.setHash(tmpl.getHashFromPosition());
     tmpl.setProgress(tmpl.getProgressFromPosition());
-  }, 1000 / 10)
+  }, 1000 / 10),
+
+  'click #toggle-menu': function(e, tmpl) {
+    var layout = tmpl.find('#layout');
+    layout.classList.add('open');
+  },
+
+  'click #sidebar': function(e) {
+    e.stopPropagation();
+  },
+
+  'click #overlay': function(e, tmpl) {
+    var layout = tmpl.find('#layout');
+    layout.classList.remove('open');
+  },
+
+  'click #sidebar li': function(e, tmpl) {
+    var layout = tmpl.find('#layout');
+    layout.classList.remove('open');
+  }
 });

@@ -25,17 +25,15 @@
 </head>
 
 <body>
-  <div id="sidebar">
-    <div id="logo">
-      <a href="/">
-        <img src="logo.png" alt="Meteor Astronomy Logo" />
-      </a>
-      <div class="version">0.13.0 documentation</div>
+  <div id="layout">
+    <div id="overlay"></div>
+    <div id="sidebar">
+      {{> Logo}}
+      {{> TableOfContents}}
     </div>
-    {{> TableOfContents}}
-  </div>
-  <div id="container">
-    {{> Title}}
-    {{> Contents}}
+    <div id="main">
+      {{> Title}}
+      {{> Contents}}
+    </div>
   </div>
 </body>
