@@ -11,8 +11,7 @@ var data = [
       'Default values',
       'Transient fields',
       'Immutable fields',
-      'Nested fields',
-      'Fields per environment'
+      'Nested fields'
     ],
     'Getting fields values',
     [
@@ -28,9 +27,19 @@ var data = [
     ],
     'Saving and removing',
     'Fetching documents',
+    'Direct collection access',
     'Methods',
-    'Events system',
+    'Events',
+    [
+      'Events propagation',
+      'Preventing default',
+      'Storage events',
+      'Instance events',
+      'Class events',
+      'Global events'
+    ],
     'Indexes',
+    'Extending',
     'Inheritance'
   ],
   'Advanced usage',

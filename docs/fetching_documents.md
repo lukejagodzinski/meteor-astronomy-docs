@@ -1,3 +1,40 @@
 {{#template name="FetchingDocuments"}}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Once you bind an Astronomy class to a Collection, objects returned from that collection will automatically be converted to instances of the given class. Let's take a look at the example.
+
+```js
+Users = new Mongo.CollectionName = new Mongo.Collection('users');
+User = Astro.Class({
+  name: 'User',
+  collection: Users,
+  fields: {
+    firstName: 'string',
+    lastName: 'string'
+  }
+});
+
+var user = new User();
+user.save();
+
+/* ... */
+
+// Fetching document from the collection.
+var user = Users.findOne();
+// It's not a plain JavaScript object, it's an instance of the User class.
+user.set('firstName', 'John');
+user.save();
+```
+
+As you can see, by binding the `User` class with the `Users` collection using the `collection` property in the class definition, we automatically created a transformation function for the collection.
+
+**Fetching plain JavaScript objects**
+
+However, there are situation when you need a plain JavaScript object. You can do that by passing `null` as the `transform` option.
+
+```js
+var user = Users.findOne({}, {
+  transform: null
+});
+
+user.save(); // TypeError: user.save is not a function.
+```
 {{/template}}
