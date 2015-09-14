@@ -14,13 +14,17 @@ var data = [
       'Nested fields',
       'Fields per environment'
     ],
-    'Modyfing documents',
+    'Getting fields values',
+    [
+      'Get',
+      'Modified'
+    ],
+    'Modifying documents',
     [
       'Set',
       'Push',
       'Pop',
-      'Inc',
-      'Get'
+      'Inc'
     ],
     'Saving and removing',
     'Fetching documents',
