@@ -13,18 +13,31 @@ var data = [
       'Immutable fields',
       'Nested fields'
     ],
-    'Modyfing documents',
+    'Getting fields values',
+    [
+      'Get',
+      'Modified'
+    ],
+    'Modifying documents',
     [
       'Set',
       'Push',
       'Pop',
-      'Inc',
-      'Get'
+      'Inc'
     ],
     'Saving and removing',
     'Fetching documents',
+    'Direct collection access',
     'Methods',
-    'Events system',
+    'Events',
+    [
+      'Events propagation',
+      'Preventing default',
+      'Storage events',
+      'Instance events',
+      'Class events',
+      'Global events'
+    ],
     'Indexes',
     'Inheritance',
     'Extending class'
