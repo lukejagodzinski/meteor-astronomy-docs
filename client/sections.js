@@ -11,8 +11,7 @@ var data = [
       'Default values',
       'Transient fields',
       'Immutable fields',
-      'Nested fields',
-      'Fields per environment'
+      'Nested fields'
     ],
     'Modyfing documents',
     [
@@ -27,7 +26,8 @@ var data = [
     'Methods',
     'Events system',
     'Indexes',
-    'Inheritance'
+    'Inheritance',
+    'Extending class'
   ],
   'Advanced usage',
   [

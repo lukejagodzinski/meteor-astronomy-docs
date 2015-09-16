@@ -9,6 +9,6 @@ autopublish
 insecure
 simple:markdown-templating
 less
-jagi:astronomy
-jagi:astronomy-slug-behavior
 underscore
+jagi:astronomy@1.0.0-rc.1
+jagi:astronomy-slug-behavior@1.0.0-rc.1
