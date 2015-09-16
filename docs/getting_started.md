@@ -93,7 +93,7 @@ Post = Astro.Class({
   fields: {
     title: {
       type: 'string',
-      validators: [
+      validator: [
         Validators.minLength(3),
         Validators.maxLength(40)
       ]
@@ -103,7 +103,7 @@ Post = Astro.Class({
 });
 ```
 
-We've modified the definition of the `title` field. Now instead passing a field type as a string, we pass an object. The object contains two properties: `type` and `validators`. The `type` property is just the type of the field. The `validators` property is a list of validators for the given field. We defined only two validators: `minLength` and `maxLength`. Now, we'll validate object before saving it.
+We've modified the definition of the `title` field. Now instead passing a field type as a string, we pass an object. The object contains two properties: `type` and `validators`. The `type` property is just the type of the field. The `validator` property is a list of validators for the given field. We defined only two validators: `minLength` and `maxLength`. Now, we'll validate object before saving it.
 
 ```js
 var post = new Post({
@@ -120,5 +120,4 @@ The `validate` method will return false if any of the fields didn't pass validat
 **What's next?**
 
 It was a brief introduction that covered only a tiny portion of Astronomy features. If you want to read more about Astronomy please take a look at the other sections in this documentation.
-
 {{/template}}
