@@ -1,3 +1,45 @@
 {{#template name="Methods"}}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+By adding methods to your class you can make a document to be alive. A user can `user.greet()` you and a dog can `dog.bark()`. Let's take a look at the example of adding the `fullName()` method to the `User` class.
+
+```js
+User = Astro.Class({
+  name: 'User',
+  /* ... */
+  fields: ['firstName', 'lastName'],
+  methods: {
+    fullName: function (param) {
+      var fullName = this.firstName + ' ' + this.lastName;
+      if (param === 'lower') {
+        return fullName.toLowerCase();
+      } else if (param === 'upper') {
+        return fullName.toUpperCase();
+      }
+      return fullName;
+    }
+  }
+});
+
+var post = new User();
+post.set({
+  firstName: 'John',
+  lastName: 'Smith'
+});
+post.fullName();  // Returns "John Smith"
+```
+
+A context (`this`) in a method is a document instance. You can access other fields of the document. The `fullName()` method takes the `firstName` and `lastName` properties and join them with a space character and returns such string.
+
+**Using methods in templates**
+
+You can use Astronomy methods in templates as normal methods or properties. Let's take a look at the example of printing a full name of a user:
+
+```html
+<div>Full name: {{|user.fullName}}</div>
+```
+
+You can also pass parameters to methods:
+
+```html
+<div>Full name: {{|user.fullName "upper"}}</div>
+```
 {{/template}}

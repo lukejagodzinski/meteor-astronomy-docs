@@ -9,9 +9,9 @@ var data = [
       'Simple fields list',
       'Fields with types',
       'Default values',
+      'Nested fields',
       'Transient fields',
-      'Immutable fields',
-      'Nested fields'
+      'Immutable fields'
     ],
     'Getting fields values',
     [
@@ -25,7 +25,11 @@ var data = [
       'Pop',
       'Inc'
     ],
-    'Saving and removing',
+    'Storage',
+    [
+      'Saving',
+      'Removing'
+    ],
     'Fetching documents',
     'Direct collection access',
     'Methods',
