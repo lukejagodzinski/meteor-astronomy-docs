@@ -38,9 +38,9 @@ var data = [
       'Events propagation',
       'Preventing default',
       'Storage events',
-      'Instance events',
-      'Class events',
-      'Global events'
+      'Modification events',
+      'Initialization events',
+      'Other events'
     ],
     'Indexes',
     'Inheritance',
