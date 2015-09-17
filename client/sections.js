@@ -46,6 +46,18 @@ var data = [
     'Inheritance',
     'Extending class'
   ],
+  'Modules',
+  [
+    'Validators',
+    'Simple validators',
+    'Relations'
+  ],
+  'Behaviors',
+  [
+    'Timestamp',
+    'Slug',
+    'Soft remove'
+  ],
   'Advanced usage',
   [
     'Writing modules',
