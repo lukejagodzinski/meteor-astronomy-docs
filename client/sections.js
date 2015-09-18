@@ -2,6 +2,7 @@ var data = [
   'What is Astronomy?',
   'Features',
   'Getting started',
+  'Changelog',
   'Key concepts',
   [
     'Defining fields',

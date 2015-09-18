@@ -16,4 +16,15 @@ The method returns an object of key-value pairs where the key is a field name an
 ```js
 user.getModified(true); // Returns {firstName: "Luke"}
 ```
+
+**Is document modified?**
+
+You can also check if a document is modified using the `isModified()` method. Remember that it's not a reactive variable.
+
+```js
+var user = Users.findOne();
+user.isModified(); // false
+user.set('firstName', 'John');
+user.isModified(); // true
+```
 {{/template}}
