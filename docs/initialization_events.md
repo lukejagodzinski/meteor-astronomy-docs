@@ -27,8 +27,7 @@ var u = new User({
   firstName: 'John',
   lastName: 'Smith'
 });
-
-// On the console the following text will be printed:
-// {firstName: 'John', lastName: 'Smith'}
 ```
+
+On the console the `"{firstName: 'John', lastName: 'Smith'}"` text will be printed.
 {{/template}}
