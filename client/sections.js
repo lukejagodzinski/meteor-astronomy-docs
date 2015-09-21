@@ -50,6 +50,10 @@ var data = [
   'Modules',
   [
     'Validators',
+    [
+      'Adding validators',
+      'Creating validators'
+    ],
     'Simple validators',
     'Relations'
   ],
