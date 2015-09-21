@@ -1,7 +1,7 @@
 {{#template name="Events"}}
 Astronomy is equipped with a full-fledged events system including events propagation. There are several predefined events but behaviors and modules creators can create their own events.
 
-We can define events on the level of the class on the global level. Let's take a look at the example.
+We can define events on the level of the class or on the global level. Let's take a look at the example.
 
 **Define events on the class level**
 

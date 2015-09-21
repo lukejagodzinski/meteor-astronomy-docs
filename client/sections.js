@@ -45,7 +45,9 @@ var data = [
     ],
     'Indexes',
     'Inheritance',
-    'Extending class'
+    'Extending class',
+    'Cloning',
+    'Reloading'
   ],
   'Modules',
   [

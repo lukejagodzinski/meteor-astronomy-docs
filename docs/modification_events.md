@@ -31,27 +31,32 @@ The `pop()` method:
 
 You can prevent each operation using the `preventDefault()` method on the event object passed to the event handler as the first argument.
 
-**Data passed to the event object**
+**Data passed in the event object**
 
-Event objects passed to the modification events handlers contain the `data` property that stores additional information about the event. Let's examine what that holds each event object.
+Event objects passed to the modification events handlers contain the `data` property that stores additional information about the event. Let's examine what does each event object hold.
 
-The `set()` method:
+The `beforeChange` and `afterChange` events in all methods.
+
+- `e.data.fieldName` - a field name being modified
+- `e.data.operation` - an operation name: `set`, `inc`, `push`, `pop`
+
+The `beforeSet` and `afterSet` events in the `set()` method:
+
+- `e.data.fieldName` - a field name being modified
+- `e.data.setValue` - a field value being set
+
+The `beforeInc` and `afterInc` events in the `inc()` method:
+
+- `e.data.fieldName` - a field name being modified
+- `e.data.incValue` - an incrementation amount of a modified field
+
+The `beforePush` and `afterPush` events in the `push()` method:
+
+- `e.data.fieldName` - a field name being modified
+- `e.data.pushValue` - a value being pushed into the array
+
+The `beforePop` and `afterPop` events in the `pop()` method:
 
 - `e.data.fieldName` - a field name that is being modified
-- `e.data.fieldValue` - a field value being set
-
-The `inc()` method:
-
-- `e.data.fieldName` - a field name that is being modified
-- `e.data.incValue` - an incrementation value of a modified field
-
-The `push()` method:
-
-- `e.data.fieldName` - a field name that is being modified
-- `e.data.pushedValue` - a value being pushed into the array
-
-The `pop()` method:
-
-- `e.data.fieldName` - a field name that is being modified
-- `e.data.popItem` - a value being popped from the array
+- `e.data.popValue` - a value being popped from the array
 {{/template}}

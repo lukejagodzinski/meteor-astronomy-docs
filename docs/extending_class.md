@@ -1,5 +1,5 @@
 {{#template name="ExtendingClass"}}
-There are situations, when we want to have a class that has the same base but some differences (additional fields, methods or events) depending on the environment. For example, we may want to have some fields that are only available on the server. Let's take a look at how we can extend a class:
+There are situations, when we want to have some differences in a class (additional fields, methods or events) depending on an environment. For example, we may want to have some fields that are only available on the server. Let's take a look at how we can extend a class to achieve that.
 
 ```js
 // Client and server

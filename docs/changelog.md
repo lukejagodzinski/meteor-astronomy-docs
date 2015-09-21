@@ -1,5 +1,5 @@
 {{#template name="Changelog"}}
-# 1.0.0-rc.1 (2015-09-16)
+**1.0.0-rc.1 (2015-09-16)**
 
 - [Nested classes/fields](#nested-fields)
 - [Transient fields](#transient-fields)
@@ -35,24 +35,24 @@
 - [Changes in behaviors creation](#writing-behaviors)
 - The `supportLegacyBrowsers` configuration variable was removed. To support older browsers and simplify the Astronomy code, there was a need for abandoning some features from ES6 that can't be polyfilled. The only change is that you should always use [modification functions](#modifying-documents) to change values of the fields. You shouldn't change them directly.
 
-# 0.12.0, 0.12.1 (2015-07-13)
+**0.12.0, 0.12.1 (2015-07-13)**
 
 - Indexes
 
-# 0.11.0 (2015-07-01)
+**0.11.0 (2015-07-01)**
 
 - Support for legacy browsers by using the `Astro.config.supportLegacyBrowsers` flag
 - Child classes can have the same amount of fields as a Parent class
 - Ability to set the `_id` field on a document's creation
 
-# 0.10.0 (2015-05-31)
+**0.10.0 (2015-05-31)**
 
 - Changed utilities namespace
 - Removed automatic setters and getters
 - Nested validators
 - Changed the way validators are added to the class
 
-# 0.9.0 (2015-05-21)
+**0.9.0 (2015-05-21)**
 
 - Changes in API:
   - `Astro.Module` to `Astro.createModule`
@@ -65,21 +65,21 @@
   - `Astro.validators` or `Validators` - list of all added / created validators
   - `Astro.behaviors` - list of all added behaviors
 
-# 0.8.0 (2015-05-17)
+**0.8.0 (2015-05-17)**
 
 - Relations
 - Moving all methods from Schema to Class
 
-# 0.7.0 (2015-05-13)
+**0.7.0 (2015-05-13)**
 
 - EJSON-ification of Astronomy objects
 
-# 0.6.1 (2015-05-10)
+**0.6.1 (2015-05-10)**
 
 - Rewrite events system and introduce events propagation
 - Rename validation helpers
 
-# 0.6.0 (2015-05-09)
+**0.6.0 (2015-05-09)**
 
 - Global events system
 
@@ -89,15 +89,15 @@ Astro.eventManager.on('validationerror', function(e) {
 });
 ```
 
-# 0.5.1 (2015-05-09)
+**0.5.1 (2015-05-09)**
 
 - Better modified fields detection
 
-# 0.4.0 (2015-05-07)
+**0.4.0 (2015-05-07)**
 
 - New events system
 
-# 0.4.0 (2015-04-29)
+**0.4.0 (2015-04-29)**
 
 - The field type definition in the form of string instead casting function.
 
