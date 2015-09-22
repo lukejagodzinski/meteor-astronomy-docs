@@ -1,4 +1,4 @@
-{{#template name="ValidationErrorMessage"}}
+{{#template name="GeneratingErrorMessages"}}
 There are several ways of generating an error message when validation fails. Of course, you can always use default error messages that comes with the validators module. However if you want something more application specific or when you need messages translation, it may be a good idea to generate custom error message. In this section, we will discuss all possible ways of the error message generation.
 
 **A validation message in a field validator**

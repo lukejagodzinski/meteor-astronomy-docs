@@ -54,9 +54,20 @@ var data = [
     'Validators',
     [
       'Adding validators',
-      'Validation error message',
       'Validation',
-      'Creating validators'
+      'Generating error messages',
+      'Displaying error messages',
+      'Creating validators',
+      'Validation order',
+      'Validators list',
+      [
+        'Type validators',
+        'Existence validators',
+        'Size validators',
+        'Comparison validators',
+        'Logical validators',
+        'Nested validators'
+      ]
     ],
     'Simple validators',
     'Relations'
