@@ -13,10 +13,13 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  height: 80px;
-  line-height: 80px;
+  height: 60px;
+  line-height: 60px;
   margin: 0;
   font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 h1 {
@@ -55,15 +58,16 @@ h3 {
 #title {
   position: fixed;
   background-color: #ffffff;
-  height: 80px;
+  height: 60px;
   margin: 0;
-  padding: 0 50px;
+  padding: 0 1em;
   box-sizing: border-box;
   left: 0;
   top: 0;
   right: 0;
   border-bottom: 1px solid #f0f0f0;
   white-space: nowrap;
+  text-overflow: ellipsis;
   z-index: 2;
 
   #toggle-menu {
@@ -71,7 +75,7 @@ h3 {
     vertical-align: top;
     width: 40px;
     height: 40px;
-    margin: 20px 20px 20px 0;
+    margin: 10px 10px 10px 0;
     text-align: center;
     line-height: 40px;
     font-size: 40px;
@@ -171,7 +175,7 @@ h3 {
 }
 
 #content {
-  padding: 0 50px 50px 50px;
+  padding: 0 1em 1em 1em;
   max-width: 920px;
 
   p {
@@ -180,6 +184,11 @@ h3 {
 }
 
 @media (min-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    height: 80px;
+    line-height: 80px;
+  }
+
   #sidebar {
     left: 0;
   }
@@ -189,7 +198,9 @@ h3 {
   }
 
   #title {
+    height: 80px;
     left: 270px;
+    padding: 0 2em;
 
     #toggle-menu {
       display: none;
@@ -197,6 +208,7 @@ h3 {
   }
 
   #content {
+    padding: 0 2em 2em 2em;
   }
 }
 
