@@ -37,4 +37,16 @@ It's important to notice that error messages for nested fields resides inside of
 ```
 
 As you can see, that time we used the `hasValidationError()` method from the `address` field and we passed the `"city"` string as its argument. The same is true if it goes about the `getValidationError()` method.
+
+**Clearing error messages**
+
+If a field validation failed then an error message resides in the document and is correlated with the given field. Now, if you set a new value for the field then the error message will be cleared for that field to prepare a document for next validation. However you may want to clear all validation errors. You can do it using the `clearValidationErrors()` method.
+
+```js
+var user = new User();
+user.validate();
+user.getValidationErrors(); // {firstName: "..."}
+user.clearValidationErrors();
+user.getValidationErrors(); // {}
+```
 {{/template}}
