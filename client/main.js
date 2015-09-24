@@ -28,7 +28,7 @@ Template.body.onRendered(function() {
   };
 
   tmpl.getHashFromPosition = function() {
-    var nextIdx = 0;
+    var nextIdx = anchors.length;
     anchors.every(function(anchor, idx) {
       if (anchor.offsetTop > main.scrollTop) {
         nextIdx = idx;
@@ -43,8 +43,8 @@ Template.body.onRendered(function() {
   };
 
   tmpl.getProgressFromPosition = function() {
-    var nextIdx = 0;
-    var currIdx = 0;
+    var nextIdx = anchors.length;
+    var currIdx = anchors.length;
     anchors.every(function(anchor, idx) {
       if (anchor.offsetTop > main.scrollTop) {
         nextIdx = idx;
@@ -55,9 +55,14 @@ Template.body.onRendered(function() {
     var currIdx = Math.max(0, Math.min(anchors.length, nextIdx - 1));
     var nextAnchor = anchors[nextIdx];
     var currAnchor = anchors[currIdx];
-    var progress = (main.scrollTop - currAnchor.offsetTop) /
-      (nextAnchor.offsetTop - currAnchor.offsetTop) * 100;
-    return progress;
+    if (_.isUndefined(nextAnchor)) {
+      return (main.scrollTop - currAnchor.offsetTop) /
+        (main.scrollHeight - currAnchor.offsetTop - main.clientHeight) * 100;
+      return 0;
+    } else {
+      return (main.scrollTop - currAnchor.offsetTop) /
+        (nextAnchor.offsetTop - currAnchor.offsetTop) * 100;
+    }
   };
 
   if (window.location.hash) {
