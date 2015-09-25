@@ -1,11 +1,11 @@
 {{#template name='WhatIsAstronomy'}}
 The [Astronomy](https://atmospherejs.com/jagi/astronomy) package introduces the [Model Layer](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) for Meteor collections. It can also be named the Object Document Mapping system (ODM) or for people coming from relational database environments the Object-Relational Mapping system (ORM).
 
-Leaving terminology on the side, it gives you a possibility to define a document's schema that includes fields definition, methods, events, validators and many more. Thanks to that programming is much easier and the amount of code you have to write much smaller. But a picture is worth a thousand words, so let's take a look at a simple example.
+Leaving terminology aside, Astronomy gives you a possibility to define a document's schema that includes field definitions, methods, events, validators and many more. As a result, programming is much easier and the amount of code you have to write much smaller. But a picture is worth a thousand words, so let's take a look at a simple example.
 
 **Example**
 
-When fetching documents from Mongo collections, you get plain JavaScript objects without any logic. You have to validate values of object's properties, check what fields have changed, save only modified fields, transform values coming from forms, in every place you are playing with a document. A lot of things to do. Wouldn't it be great if you could define some simple rules and leave everything else to framework? It's actually possible thanks to Astronomy. But first let's take a look at how your code would look like without using Astronomy.
+When fetching documents from Mongo collections, you get plain JavaScript objects without any logic. You have to validate values of objects' properties, check what fields have changed, save only modified fields, transform values coming from forms, in every place you are playing with a document; a lot of things to do. Wouldn't it be great if you could define some simple rules and leave everything else to framework? It's actually possible thanks to Astronomy. But first let's take a look at how your code would look like without using Astronomy.
 
 ```js
 var post = Posts.findOne(id);
@@ -48,17 +48,17 @@ if (post.validate()) {
 }
 ```
 
-What approach is simpler? I think, the choice is obvious.
+What approach is simpler? I think the choice is obvious.
 
 **Why should I use it?**
 
 There are many other packages that implement some of the functionalities present in Astronomy. I will try to point out here the main benefits of using Astronomy over other solutions, besides having many features that are listed in the [Features](#features) section.
 
-- Astronomy is highly modularized. This was one of the main principles when creating it. Thanks to that, anyone can easily hook into almost every process that happens in Astronomy. Developers can create their own modules, behaviors and validators.
+- Astronomy is highly modularized. This was one of the main principles when creating it. Consequently, anyone can easily hook into almost every process that happens in Astronomy. Developers can create their own modules, behaviors and validators.
 - It's easy to learn and use. Astronomy does not reinvent the wheel. It takes the best from the tools you are already familiar with, not only from the JavaScript world, but also from other languages.
 - When using Astronomy, you can easily replace three to five packages that you already use with a single one that follows the same pattern across all its modules. The main principle is simplicity.
-- It follows quite different principles to do the job that other packages do. Thanks to that the amount of code you have to write to setup your classes and create application logic is significantly lower.
-- There are many developers who already use it and are very happy that they switched to Astronomy. I allowed myself to post some of their comments here:
+- It follows quite different principles to do the job that other packages do. As a result, the amount of code you have to write to setup your classes and create application logic is significantly lower.
+- There are many developers who already use it and are very happy that they switched to Astronomy. Here are some of their comments:
 
 > If this package were around when I created SimpleSchema, I would have used it instead of creating SimpleSchema.
 
@@ -90,13 +90,13 @@ There are many other packages that implement some of the functionalities present
 
 **History**
 
-The idea for creating a package for Meteor that would introduce a Model Layer emerged after creating several simple Meteor applications. I noticed that I was constantly repeating the same parts of a code to manage documents' storage and validation. It was frustrating in comparison to what I've accustomed to in the [Doctrine](http://www.doctrine-project.org/) library for [PHP](https://php.net/) that I had used for many years.
+The idea for creating a package for Meteor that would introduce a Model Layer emerged after creating several simple Meteor applications. I noticed that I was constantly repeating the same parts of a code to manage documents' storage and validation. It was frustrating in comparison to what I've been accustomed to in the [Doctrine](http://www.doctrine-project.org/) library for [PHP](https://php.net/) that I had used for many years.
 
 This is why I've decided to create a Meteor package that would take the best from the Doctrine library. The first version was released in 2013 and was named [Verin Model](https://github.com/jagi/verin-model). It worked well in my projects, so I made it available to the community through the [Meteorite](https://github.com/oortcloud/meteorite/) package installer. However, I haven't been promoting it anywhere so the number of users was limited.
 
-In the late 2014, I decided to give it one more try and implement a much better package. The package that would be modular, would have all the features from the previous package and few more additions. In the meanwhile, many developers tried to fill a gap of lack of model layer in Meteor with their packages. Some of them (e.g. [SimpleSchema](https://atmospherejs.com/aldeed/simple-schema)) had features that I was looking for, on the other hand they were too complex to use. Some packages just focused on single features ([Collection Hooks](https://atmospherejs.com/matb33/collection-hooks), [Collection Behaviours](https://atmospherejs.com/sewdn/collection-behaviours), [Collection Helpers](https://atmospherejs.com/dburles/collection-helpers)). Plus, I didn't like the idea of using many packages that followed quite different rules. I just wanted one modular tool that would fit all my needs. That's why I've created Astronomy.
+In the late 2014, I decided to give it one more try and implement a much better package. A package that would be modular, would have all the features from the previous package and a few more additions. In the meanwhile, many developers tried to fill a gap of lack of model layer in Meteor with their packages. Some of them (e.g. [SimpleSchema](https://atmospherejs.com/aldeed/simple-schema)) had features that I was looking for, but were too complex to use. Some packages just focused on single features ([Collection Hooks](https://atmospherejs.com/matb33/collection-hooks), [Collection Behaviours](https://atmospherejs.com/sewdn/collection-behaviours), [Collection Helpers](https://atmospherejs.com/dburles/collection-helpers)). I didn't like the idea of using many packages that followed quite different rules. I just wanted one modular tool that would fit all my needs. That's why I've created Astronomy.
 
 **Why the name "Astronomy"?**
 
-As almost everything, that is Meteor-related, has some space-related name. This one couldn't be an exception. The model layer in the MVC pattern is a description of real objects. And, the science describing objects in space is called [Astronomy](http://en.wikipedia.org/wiki/Astronomy). The choice was quick.
+As almost everything that is Meteor-related has some space-related name, this one couldn't be an exception. The model layer in the MVC pattern is a description of real objects. And, the science describing objects in space is called [Astronomy](http://en.wikipedia.org/wiki/Astronomy). The choice was quick.
 {{/template}}
