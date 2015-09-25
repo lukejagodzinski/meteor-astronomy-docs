@@ -11,7 +11,7 @@ User = Astro.Class({
 });
 ```
 
-In this example, we passed an object with fields' names as keys and fields' types as values. There are several predefined types, you can choose from:
+In this example, we passed an object with the fields' names as keys and the fields' types as values. There are several predefined types. You can choose from:
 
 - `string`
 - `number`
