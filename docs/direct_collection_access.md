@@ -10,7 +10,7 @@ Each class created in Astronomy has some useful methods for interacting with Col
 
 *NOTICE: Not all options from collection methods are available in Astronomy equivalents.*
 
-But why creating a new set of methods that are equivalents of the collection methods. These methods have some extra features. Like for example, possibility to hook into the process of the method execution. The good example can be `find()` and `findOne()` methods. The `softremove` behavior hooks into the find operation by defining the `beforeFind` event handler. It modifies a selector so that it only returns non-softremoved documents.
+But why create a new set of methods that are equivalents of the Collection methods. Astronomy's methods have some extra features. For example, they provide a hook into the process during the method execution. A good example use case is the `softremove` behavior. The behavior hooks into the `find()` and `findOne()` operations by defining a `beforeFind` event handler which modifies the selector so that it only returns non-softremoved documents.
 
 ```js
 Users.find().count(); // 5
@@ -60,11 +60,11 @@ It will insert the following document.
 }
 ```
 
-As you can see, this method makes sure that the data is consistent. The same is true if it goes about other methods.
+As you can see, this method makes sure that the data is consistently typed. The same is true when using Astronomy's other Class methods.
 
 **The "forEach" option**
 
-You can pass the `forEach` option in the `update()` method. It has to be a function that will be invoked for each update operation.
+You can pass a `forEach` option in the `update()` method. It has to be a function that will be invoked for each update operation.
 
 ```js
 User.update(selector, modifier, {
@@ -74,7 +74,7 @@ User.update(selector, modifier, {
 });
 ```
 
-If you return falsy in the `forEach` function, the document won't be saved.
+If you return falsy in the `forEach` function, that particular document won't be saved.
 
 ```js
 User.update(selector, modifier, {

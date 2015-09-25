@@ -1,5 +1,5 @@
-{{#template name="FetchingDocuments"}}
-Once you bind an Astronomy class to a Collection, objects returned from that collection will automatically be converted to instances of the given class. Let's take a look at the example.
+ {{#template name="FetchingDocuments"}}
+Once you bind an Astronomy class to a Collection, objects returned from that collection will automatically be converted to instances of the given class. Let's take a look at an example:
 
 ```js
 Users = new Mongo.CollectionName = new Mongo.Collection('users');
