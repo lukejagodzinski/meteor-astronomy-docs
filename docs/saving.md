@@ -1,5 +1,5 @@
 {{#template name="Saving"}}
-In this section we will focus on documents' storage. MongoDB provides the `insert` method that allows document inserting and the `update` method that modifies an already stored document. In Astronomy we don't need to call this methods directly. Because Astronomy documents are aware of their states, we can replace both methods with the one named `save()`. Let's take a look at the example showing how to insert new document and update existing one.
+In this section we will focus on the storage of documents. MongoDB provides the `insert` method that allows document inserting and the `update` method that modifies an already stored document. In Astronomy we don't need to call these methods directly. Because Astronomy documents are aware of their states, we can replace both methods with the a single method `save()`. Let's take a look at an example showing how to insert a new document and update an existing one.
 
 ```js
 var user = new User();
@@ -20,7 +20,7 @@ As you can see, we've used the `save()` method for both insertion and modificati
 
 **Callback function**
 
-Because Meteor provides a way of passing a callback function as the last argument of `insert()` and `update()` methods, so Astronomy does it too in the `save()` method.
+Because Meteor provides a way of passing a callback function as the last argument of `insert()` and `update()` methods, Astronomy does so as well by accepting a callback in the `save()` method:
 
 
 ```js
