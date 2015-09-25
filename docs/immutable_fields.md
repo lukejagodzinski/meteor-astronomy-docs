@@ -1,5 +1,5 @@
 {{#template name="ImmutableFields"}}
-If you want some fields to be immutable you should set the `immutable` flag in the definition of the field. It won't be possible to change field's value once it was persisted in the database. Let's take a look at the example.
+If you want some field to be immutable you should set the `immutable` flag in the definition of the field. It won't be possible to change the field's value once it has been persisted in the database. Let's take a look at the example.
 
 ```js
 User = Astro.Class({
