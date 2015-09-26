@@ -80,6 +80,7 @@ var data = [
   ],
   'Advanced usage',
   [
+    'Custom types',
     'Writing modules',
     'Writing behaviors'
   ]
