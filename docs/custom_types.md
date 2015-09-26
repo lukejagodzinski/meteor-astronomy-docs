@@ -5,7 +5,7 @@ You can create custom types by using the `Astro.createType()` method. You have t
 Astro.createType({
   name: 'type',
   constructor: function Type(fieldDefinition) {},
-  getDefault: function() {},
+  getDefault: function(defaultValue) {},
   cast function(value) {},
   needsCast function(value) {},
   plain function(value) {},
@@ -16,7 +16,7 @@ Astro.createType({
 Now, we will investigate each property:
 
 - `constructor` - the constructor function is the one that receives a field definition as the first argument. We can get some extra data from this definition and initialize a field. For example in the `object` type, we get the `nested` property and initialize a sub type.
-- `getDefault` - its function is to make sure that a default value of a field will be casted to the proper type defined for a field. If you don't provide this method, it will cast any default value anyway. This method is used in `object` and `array` types.
+- `getDefault` - its function is to make sure that a default value of a field will be casted to the proper type defined for a field. A default value for a field is passed as the first argument of a method. If you don't provide `getDefault` method, then a default value will be casted anyway. This method is used in `object` and `array` types.
 - `cast` - it receives as the first argument a value being casted. Your task is to cast a given value to your type and return it.
 - `needsCast` - it's a helper function that can speed up a process of casting values. It just checks if there is a need for running the `cast` function. If a passed value is already an instance of a given type then we can just return `true` in the `needsCast` method.
 - `plain` - its job is to convert a value of your type to a plain JavaScript value. This plain value will be stored in the database.
