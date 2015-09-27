@@ -10,11 +10,12 @@ body {
   font-size: 1em;
   line-height: 1.6;
   color: #333333;
+  overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  height: 60px;
-  line-height: 60px;
+  height: 64px;
+  line-height: 64px;
   margin: 0;
   font-size: 1.5em;
   font-weight: 300;
@@ -48,33 +49,29 @@ h1, h2, h3, h4, h5, h6 {
 #title {
   position: fixed;
   background-color: #ffffff;
-  height: 60px;
+  height: 64px;
   margin: 0;
-  padding: 0 1em;
   box-sizing: border-box;
   left: 0;
   top: 0;
   right: 0;
   border-bottom: 1px solid #f0f0f0;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   z-index: 2;
 
   #toggle-menu {
-    display: inline-block;
-    vertical-align: top;
-    width: 40px;
-    height: 40px;
-    margin: 10px 10px 10px 0;
+    position: absolute;
+    width: 64px;
+    height: 64px;
     text-align: center;
-    line-height: 40px;
-    font-size: 40px;
+    line-height: 64px;
+    font-size: 1.5em;
     cursor: pointer;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    display: inline-block;
-    vertical-align: top;
+    padding: 0 16px 0 64px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   #progress {
@@ -147,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .depth-5 {
-      margin-left: 60px;
+      margin-left: 64px;
     }
   }
 }
@@ -177,29 +174,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media (min-width: 768px) {
-  #sidebar {
-    left: 0;
-  }
-
-  #main {
-    left: 270px;
-  }
-
-  #title {
-    left: 270px;
-    padding: 0 2em;
-
-    #toggle-menu {
-      display: none;
-    }
-  }
-
-  #content {
-    padding: 0 2em 2em 2em;
-  }
-}
-
 .open {
   #sidebar {
     transform: translateX(270px);
@@ -209,8 +183,44 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
   }
 
+  #title {
+    left: 270px;
+  }
+
   #main {
     transform: translateX(270px);
+  }
+}
+
+@media (min-width: 768px) {
+  #overlay {
+    display: none !important;
+  }
+
+  #sidebar {
+    left: 0;
+    transform: translateX(0px) !important;
+  }
+
+  #title {
+    left: 270px;
+
+    #toggle-menu {
+      display: none;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      padding: 0 32px;
+    }
+  }
+
+  #main {
+    left: 270px;
+    transform: translateX(0px) !important;
+  }
+
+  #content {
+    padding: 0 2em 2em 2em;
   }
 }
 
