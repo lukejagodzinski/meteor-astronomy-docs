@@ -1,4 +1,4 @@
-{{#template name="SoftRemove"}}
+{{#template name="Softremove"}}
 You can add the `softremove` behavior to your project by executing the following command.
 
 ```sh

@@ -78,7 +78,8 @@ var data = [
   [
     'Timestamp',
     'Slug',
-    'Soft remove'
+    'Softremove',
+    'Sort'
   ],
   'Advanced usage',
   [
