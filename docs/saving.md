@@ -29,4 +29,13 @@ var user = new User();
 user.save(function(err, id) {
 });
 ```
+
+**Saving only certain fields**
+
+It's also possible to save only certain fields of a document. You can pass a list of fields as the first argument of the `save()` method.
+
+```js
+var user = new User();
+user.save(['firstName', 'lastName']);
+```
 {{/template}}
