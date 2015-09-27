@@ -12,7 +12,8 @@ var data = [
       'Default values',
       'Nested fields',
       'Transient fields',
-      'Immutable fields'
+      'Immutable fields',
+      'Optional fields'
     ],
     'Getting fields values',
     [

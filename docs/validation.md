@@ -54,4 +54,8 @@ Template.Form.events({
 ```
 
 In the context of the `Form` template we have our newly created document that was filled with values coming from the form fields. We pass the `used` document as parameter of method. In the callback function, we check if there are any server validation errors. We put these errors back in the document using the `catchValidationException()` method.
+
+**Optional fields**
+
+As described in the [Optional fields](#optional-fields) section, if a field is marked as `optional` then it won't be validated if its value is `null`.
 {{/template}}
