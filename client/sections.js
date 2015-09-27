@@ -82,8 +82,8 @@ var data = [
   'Advanced usage',
   [
     'Custom types',
-    'Writing modules',
-    'Writing behaviors'
+    'Writing behaviors',
+    'Writing modules'
   ]
 ];
 
