@@ -22,5 +22,33 @@ Now, we will investigate each property:
 - `plain` - its job is to convert a value of your type to a plain JavaScript value. This plain value will be stored in the database.
 - `needsPlain` - it's a helper function that is very similar to the `needsCast` method. It just makes sure that there is a need for running the `plain` method.
 
+Let's take a look at the example type.
+
+```js
+Astro.createType({
+  name: 'date',
+  constructor: function DateField() {
+    Astro.BaseField.apply(this, arguments);
+  },
+  needsCast: function(value) {
+    return !_.isDate(value);
+  },
+  cast: function(value) {
+    return new Date(value);
+  },
+  plain: function(value) {
+    return value;
+  }
+});
+```
+
+In the `constructor` function, we call the `Astro.BaseField` constructor in the context of our type. It always have to be done.
+
+The `needsCast` function is just checking if a value being cast is already a date.
+
+The `cast` function uses the `Date` constructor to parse a value.
+
+The `plain` function just returns value. Date is not a plain JavaScript type, but Mongo is able to store dates, so we don't have to get timestamp for a date in the `plain` method.
+
 The best way to learn how to create a custom type is checking how already defined types were defined.
 {{/template}}
