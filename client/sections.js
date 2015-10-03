@@ -49,7 +49,9 @@ var data = [
     'Extending class',
     'Cloning',
     'Reloading',
-    'Publications'
+    'Publications',
+    'Custom transform',
+    'Warnings'
   ],
   'Modules',
   [

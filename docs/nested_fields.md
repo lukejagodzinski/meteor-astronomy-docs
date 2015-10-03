@@ -160,4 +160,32 @@ User = Astro.Class({
   }
 });
 ```
+
+**Array of custom objects**
+
+There are situation when you would like to nest some objects in an array but not being instances of any class. In such case you just have to omit the `nested` property. This way Astronomy will not require providing any particular type for a nested array.
+
+```js
+User = Astro.Class({
+  name: 'User',
+  collection: Users,
+  fields: {
+    'phones': {
+      type: 'array',
+      default: function() {
+        return [];
+      }
+    }
+  }
+});
+
+var user = new User();
+user.push('phones', '888 888 888');
+user.push('phones', {
+  name: 'cell'
+  number: '999 999 999'
+});
+```
+
+As you can see, you can push either a plain JavaScript string or object.
 {{/template}}
