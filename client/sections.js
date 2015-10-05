@@ -3,6 +3,7 @@ var data = [
   'Features',
   'Getting started',
   'Changelog',
+  'Examples',
   'Key concepts',
   [
     'Defining fields',
