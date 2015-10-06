@@ -20,7 +20,7 @@ validators: {
 Validators.choice(choices);
 ```
 
-The `choice` validator takes a list of valid values as the first argument and its function is to check whether a value of the field is one of them.
+The `choice` validator takes an array of valid values as the first argument and its function is to check whether a value of the field exists in the array of valid values.
 
 ```js
 // Example:
@@ -45,7 +45,7 @@ validators: {
 }
 ```
 
-*NOTICE: The `unique` validator should be used on the server because on the client we can be subscribed to not entire set of documents and checking uniqueness in such situation may not be reliable.*
+*NOTICE: The `unique` validator should only be used on the server because on the client the subscription may not contain the entire set of documents in the collection, in which case the validator may return an inaccurate result.*
 
 **equal**
 
@@ -68,7 +68,7 @@ validators: {
 Validators.equalTo(fieldName);
 ```
 
-The `equalTo` validator takes a field name as the first argument and its function is to check whether a value of the field is equal to the value of a field passed as the argument.
+The `equalTo` validator takes a field name as the first argument and its function is to check whether the value of the field is equal to the value of the field passed as the argument.
 
 ```js
 // Example:

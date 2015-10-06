@@ -29,7 +29,7 @@ The `maxLength` validator takes a number as the first argument and its function 
 Validators.gt(size);
 ```
 
-The `gt` validator takes a number as the first argument and its function is to check whether a value of a field is greater than the `size`. Where `size` is the first argument of the validator. It can also works with fields of the `Date` type and other types that are comparable with numbers.
+The `gt` validator takes a number as the first argument and its function is to check whether a value of a field is greater than the `size`. Where `size` is the first argument of the validator. It can also work with fields of `Date` type and other types that are comparable with numbers.
 
 **gte**
 
@@ -37,7 +37,7 @@ The `gt` validator takes a number as the first argument and its function is to c
 Validators.gte(size);
 ```
 
-The `gte` validator takes a number as the first argument and its function is to check whether a value of a field is greater than or equal the `size`. Where `size` is the first argument of the validator. It can also works with fields of the `Date` type and other types that are comparable with numbers.
+The `gte` validator takes a number as the first argument and its function is to check whether a value of a field is greater than or equal the `size`. Where `size` is the first argument of the validator. It can also work with fields of `Date` type and other types that are comparable with numbers.
 
 **lt**
 
@@ -45,7 +45,7 @@ The `gte` validator takes a number as the first argument and its function is to 
 Validators.lt(size);
 ```
 
-The `lt` validator takes a number as the first argument and its function is to check whether a value of a field is less than the `size`. Where `size` is the first argument of the validator. It can also works with fields of the `Date` type and other types that are comparable with numbers.
+The `lt` validator takes a number as the first argument and its function is to check whether a value of a field is less than the `size`. Where `size` is the first argument of the validator. It can also work with fields of `Date` type and other types that are comparable with numbers.
 
 **lte**
 
@@ -53,5 +53,5 @@ The `lt` validator takes a number as the first argument and its function is to c
 Validators.lte(size);
 ```
 
-The `lte` validator takes a number as the first argument and its function is to check whether a value of a field is less than or equal the `size`. Where `size` is the first argument of the validator. It can also works with fields of the `Date` type and other types that are comparable with numbers.
+The `lte` validator takes a number as the first argument and its function is to check whether a value of a field is less than or equal the `size`. Where `size` is the first argument of the validator. It can also work with fields of `Date` type and other types that are comparable with numbers.
 {{/template}}
