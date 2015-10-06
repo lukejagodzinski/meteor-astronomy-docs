@@ -15,16 +15,22 @@ validators: {
     Validators.minLength(3)
   ])
 }
-```
 
-**or**
-
-```js
+// or you can use a simple array
 validators: {
   firstName: [
     Validators.string(),
     Validators.minLength(3)
   ]
+}
+```
+
+**or**
+
+```js
+// creditCardNumber can be 15 or 16 characters long
+validators: {
+  creditCardNumber: Validators.or([Validators.length(15), Validators.length(16)])
 }
 ```
 
