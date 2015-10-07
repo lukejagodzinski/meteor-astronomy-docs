@@ -1,5 +1,5 @@
 {{#template name="Examples"}}
-The best way of learning is learning by example, that's why there is an example git [repository](https://github.com/jagi/meteor-astronomy-examples) that you can clone and run to see Astronomy in action. I encourage you to take a look at the code and how integration with form templates is done.
+The best way of learning is learning by example, that's why there is an example git [repository](https://github.com/jagi/meteor-astronomy-examples) that you can clone and run to see Astronomy in action. I encourage you to take a look at the code and how integration with form templates is done. You can also take a look at working online example [here](http://astronomy.meteor.com).
 
 **The Meteor.users collection**
 

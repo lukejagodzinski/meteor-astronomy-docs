@@ -26,6 +26,7 @@ var data = [
       'Set',
       'Push',
       'Pop',
+      'Pull',
       'Inc'
     ],
     'Storage',
