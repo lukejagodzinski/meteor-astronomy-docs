@@ -19,6 +19,7 @@ var data = [
     'Getting fields values',
     [
       'Get',
+      'Raw',
       'Modified'
     ],
     'Modifying documents',
