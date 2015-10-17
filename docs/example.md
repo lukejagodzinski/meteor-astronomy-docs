@@ -1,5 +1,5 @@
 {{#template name="Examples"}}
-The best way of learning is learning by example, that's why there is an example git [repository](https://github.com/jagi/meteor-astronomy-examples) that you can clone and run to see Astronomy in action. I encourage you to take a look at the code and how integration with form templates is done. You can also take a look at working online example [here](http://astronomy.meteor.com).
+The best way to understand Astronomy is learning by an example, that's why there is an example git [repository](https://github.com/jagi/meteor-astronomy-examples) that you can clone and run to see Astronomy in action. The example repository has two branches [ironrouter](https://github.com/jagi/meteor-astronomy-examples/tree/ironrouter) and [flowrouter](https://github.com/jagi/meteor-astronomy-examples/tree/flowrouter) showing usage of Astronomy with two routing packages [IronRouter](https://atmospherejs.com/iron/router) and [FlowRouter](https://atmospherejs.com/meteorhacks/flow-router). I encourage you to take a look at the code to see how integration with form templates is done. You can also take a look at working online example [here](http://astronomy.meteor.com).
 
 **The Meteor.users collection**
 
