@@ -80,14 +80,14 @@ Template.body.onRendered(function() {
   $(window).on('resize', _.throttle(function(e) {
     tmpl.setHash(tmpl.getHashFromPosition());
     tmpl.setProgress(tmpl.getProgressFromPosition());
-  }, 1000 / 10));
+  }, 1000 / 5));
 });
 
 Template.body.events({
   'scroll #main': _.throttle(function(e, tmpl) {
     tmpl.setHash(tmpl.getHashFromPosition());
     tmpl.setProgress(tmpl.getProgressFromPosition());
-  }, 1000 / 10),
+  }, 1000 / 5),
 
   'click #toggle-menu': function(e, tmpl) {
     var layout = tmpl.find('#layout');
