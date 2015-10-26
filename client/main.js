@@ -6,9 +6,11 @@ $(window).on('hashchange', function() {
 Template.body.onRendered(function() {
   var tmpl = this;
 
-  var main = tmpl.find('#main');
-  var anchors = tmpl.findAll('#content [id]');
-  var progressBar = tmpl.find('#progress');
+  main = tmpl.find('#main');
+  anchors = tmpl.findAll('#content [id]');
+  progressBar = tmpl.find('#progress');
+
+  tmpl.rendered = true;
 
   tmpl.setHash = function(hash, scroll) {
     scroll = _.isUndefined(scroll) ? false : scroll;
@@ -21,6 +23,10 @@ Template.body.onRendered(function() {
         main.scrollTop = currPos;
       }
     }
+  };
+
+  tmpl.scrollToHash = function(hash) {
+    window.location.replace(Meteor.absoluteUrl() + hash);
   };
 
   tmpl.setProgress = function(progress) {
@@ -57,7 +63,9 @@ Template.body.onRendered(function() {
     var currAnchor = anchors[currIdx];
     if (_.isUndefined(nextAnchor)) {
       return (main.scrollTop - currAnchor.offsetTop) /
-        (main.scrollHeight - currAnchor.offsetTop - main.clientHeight) * 100;
+        (
+          main.scrollHeight - currAnchor.offsetTop - main.clientHeight
+        ) * 100;
       return 0;
     } else {
       return (main.scrollTop - currAnchor.offsetTop) /
@@ -66,10 +74,11 @@ Template.body.onRendered(function() {
   };
 
   if (window.location.hash) {
-    if (Sections.find({
+    var section = Sections.findOne({
       slug: window.location.hash.slice(1)
-    }).count()) {
-      window.location.replace(Meteor.absoluteUrl() + window.location.hash);
+    });
+    if (section) {
+      tmpl.scrollToHash('#' + section.slug);
     } else {
       tmpl.setHash(tmpl.getHashFromPosition());
     }
@@ -85,8 +94,10 @@ Template.body.onRendered(function() {
 
 Template.body.events({
   'scroll #main': _.throttle(function(e, tmpl) {
-    tmpl.setHash(tmpl.getHashFromPosition());
-    tmpl.setProgress(tmpl.getProgressFromPosition());
+    if (tmpl.rendered) {
+      tmpl.setHash(tmpl.getHashFromPosition());
+      tmpl.setProgress(tmpl.getProgressFromPosition());
+    }
   }, 1000 / 10),
 
   'click #toggle-menu': function(e, tmpl) {
