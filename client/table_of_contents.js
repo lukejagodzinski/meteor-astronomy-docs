@@ -6,6 +6,7 @@ Template.TableOfContents.helpers({
 
 Template.Section.helpers({
   selected: function() {
-    return this.get('slug') === Session.get('hash').slice(1) ? 'selected' : '';
+    var slug = FlowRouter.getParam('slug');
+    return this.get('slug') === slug ? 'selected' : '';
   }
 });
