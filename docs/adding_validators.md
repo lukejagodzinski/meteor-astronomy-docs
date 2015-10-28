@@ -1,9 +1,9 @@
 {{#template name="AddingValidators"}}
-There are two ways of adding validators to the class. You can define them on the level of the class or on the level of the field definition. Let's take a look at the example of both.
+There are two ways of adding validators to the class. You can define them on the class or within the class's field definitions. Let's take a look at an example of both.
 
 **Validators on the class level**
 
-Validators of the class level have to be defined under the `validators` property in the class schema.
+Validators on the class level have to be defined under the `validators` property in the class schema.
 
 ```js
 User = Astro.Class({
@@ -15,11 +15,11 @@ User = Astro.Class({
 });
 ```
 
-As you can see, we've added the `minLength` validator for the `firstName` field. We will write more about available validators and their options.
+As you can see, we've added the `minLength` validator for the `firstName` field. Read on to learn more about available validators and their options.
 
 **Validators on the field level**
 
-You can also define validators with a field definition, to keep them together and make it more readable. To do that you have to define validator under the `validator` property.
+You can also define validators within a field definition to improve readability. To do this you have to define the validator using the `validator` property in the field definition.
 
 ```js
 User = Astro.Class({
@@ -38,7 +38,7 @@ User = Astro.Class({
 
 **Passing array of validators**
 
-As a value of the `validators` or `validator` property you can pass array of validators. In such situation array of validators will be replaced with the `and` validator. The `and` validator means that all sub-validators has to pass validation test to mark field's value as valid. The two following examples are equivalent.
+For the `validators` or `validator` property you can pass array of validators. When using an array of validators, it will be replaced with the `and` validator. The `and` validator means that all sub-validators have to pass their respective tests for the field's value to be considered valid. The two following examples are equivalent:
 
 The `and` validator:
 
@@ -72,7 +72,7 @@ User = Astro.Class({
 
 **Reusing validators**
 
-Sometimes you may notice that you repeat the same set of validators over and over again. There is a possibility to reuse validators.
+Sometimes you may notice that you repeat the same set of validators over and over again. Use this pattern instead:
 
 ```js
 var reqStrMin3 = Validators.and([
@@ -95,7 +95,7 @@ User = Astro.Class({
 
 Most of the validators take a param as the first argument. The param may differ from validator to validator. Let's examine some cases.
 
-Array of validators. They `and` and `or` validators are the only two predefined validators that take an array of validators as a param. We will write more about them in next sections.
+Array of validators. The `and` and `or` validators are the only two predefined validators that take an array of validators as a param. We will write more about them in next sections.
 
 ```js
 Validators.and([
@@ -109,7 +109,7 @@ Validators.or([
 ]);
 ```
 
-There are validators that take a single plain value (string, number) as a param. The examples of them are: `minLength`, `equals`, `contains`. We will write more about them in next sections.
+There are validators that take a single plain value (string, number) as a param. Examples of them include: `minLength`, `equals`, and `contains`. We will write more about them in next sections.
 
 ```js
 Validators.minLength(3);
@@ -117,7 +117,7 @@ Validators.equals('mustBeEqualToThisString');
 Validators.contains('mustContainThisString');
 ```
 
-There are validators that take array of some values or object with some validator details. The examples of them are: `choice`, `if`. We will write more about them in next sections.
+There are validators that take an array of some values or an object with some validator details. Examples include: `choice`, and `if`. We will write more about them in next sections.
 
 ```js
 Validators.choice(['value', 'has', 'to', 'be', 'equal', 'one', 'of', 'these']);
@@ -130,11 +130,11 @@ Validators.if({
 });
 ```
 
-There are also validators that does not take any param. The example of them are: `string`, `number`, `boolean`.
+There are also validators that don't take any params. Examples: `string`, `number`, and `boolean`.
 
 **Function as a validator param**
 
-There is a special type of a param. If a validator takes parameter, you can also pass a function as a param. In such situation, the param value will be calculated on validation execution. It's very useful when we want to depend validation of one field on the value of another field.
+Any validator that accepts a paramter can be a passed function instead of a simple value. In this situation, the validator will use the passed function to calculate what value to use during validation. This very useful when we want to validate one field based off another field's value.
 
 ```js
 validators: {
@@ -147,5 +147,5 @@ validators: {
 }
 ```
 
-*NOTICE: It's important to remember that a function param works with every validator that takes param as the first argument.*
+*NOTICE: It's important to remember that a function param works with every validator that takes a param as the first argument.*
 {{/template}}

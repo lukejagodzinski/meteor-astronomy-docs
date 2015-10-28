@@ -1,9 +1,9 @@
 {{#template name="GeneratingErrorMessages"}}
-There are several ways of generating an error message when validation fails. Of course, you can always use default error messages that comes with the validators module. However if you want something more application specific or when you need messages translation, it may be a good idea to generate custom error message. In this section, we will discuss all possible ways of the error message generation.
+There are several ways of generating an error message when validation fails. You can always use default error messages that comes with the validator's module. However, if you want something more application specific or if you need messages translation, then it may be a good idea to generate custom error messages. In this section, we will discuss all possible ways generating validation error messages.
 
 **A validation message in a field validator**
 
-The simplest and less flexible way of generating error message is passing it as the second argument of a validator. Let's take a look at the example.
+The simplest but least flexible way of generating error message is passing it as the second argument of a validator. Let's take a look at an example:
 
 ```js
 User = Astro.Class({
@@ -18,11 +18,11 @@ User = Astro.Class({
 });
 ```
 
-As you can see, we passed the `"The first name is too short"` string as the second argument of the `minLength` validator. Each validator can have its own error message or it can be left empty, and in such situation a default error message will be used.
+As you can see, we passed the `"The first name is too short"` string as the second argument of the `minLength` validator. Each validator can have its own error message or it can be left empty, in which case the default error message will be used.
 
 **Generating an error message in an event**
 
-There is the `validationError` event that is triggered on a validation error. There are some useful information passed to that event in an event object. They are:
+There is the `validationError` event that is triggered on a validation error. There is some useful information passed to that event in the event object. It includes:
 
 - `e.data.validator` - the field validator object
 - `e.data.validator.name` - the name of the field validator
@@ -64,9 +64,9 @@ User = Astro.Class({
 });
 ```
 
-As you can see, in the `validationError` event handler we check if a validator that caused error is `minLength` and if a field name is `firstName`. If the condition is met, then we set a new error message using the `e.setMessage()` method. We also have to stop propagation of the following events.
+As you can see, in the `validationError` event handler we check if a validator that caused error is `minLength` and if a field name is `firstName`. If these condition are met, then we set a new error message using the `e.setMessage()` method. We also have to `e.stopPropagation()` to prevent other event handlers from handling this error.
 
-As in all document events the event propagation of the `validationError` event goes from the parent class, through the child class and gets to the global scope. Knowing that we could also "catch" the `validationError` event in the global scope.
+As in all document events, the event propagation of the `validationError` event goes from the parent class to the child class and finally to the global scope. Knowing that we could also "catch" the `validationError` event in the global scope, we could also do this:
 
 ```js
 Astro.eventManager.on('validationError', function(e) {
@@ -82,5 +82,5 @@ Astro.eventManager.on('validationError', function(e) {
 });
 ```
 
-If we don't generate an error message in an event handler then it will be generated in a default event handler for a validator. If a validator does not have an event handler for the `validationError` event, then the default validation error will be used.
+If we don't generate an error message in our event handler then the message will be generated in the default event handler for the validator. If a validator does not have an event handler for the `validationError` event, then the default validation error will be used.
 {{/template}}

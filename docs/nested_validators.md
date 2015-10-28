@@ -1,7 +1,7 @@
 {{#template name="NestedValidators"}}
 **every**
 
-The `every` validator takes a validator as the first argument. The validator function is to check whether every element of a field's value, which should be an array, passes validation using the validator passed as the first argument.
+The `every` validator takes a validator as the first argument. The purpose is to check whether every element of a field's value, which should be an array, passes validation using the function passed as the first argument.
 
 ```js
 // Example:
@@ -39,7 +39,7 @@ Post = Astro.Class({
 Validators.has(propertyName);
 ```
 
-The `has` validator takes a property name as the first argument. Its function is to check whether a value of a field, which should be an object, has the property property.
+The `has` validator takes a property name as the first argument. Its function is to check whether a value of a field, which should be an object, has the property name defined.
 
 ```js
 validators: {

@@ -1,5 +1,5 @@
 {{#template name="Validation"}}
-The heart of the validation is the `validate()` method. It can be called with different sets of arguments causing different effect. Here is the list of allowed sets of arguments.
+The heart of validation is the `validate()` method. It can be called with different sets of arguments causing different effects. Here is the list of allowed arguments:
 
 - `validate()` - validate all fields and stop after the first error
 - `validate(false)` - validate all fields and do not stop after the first error
@@ -7,7 +7,7 @@ The heart of the validation is the `validate()` method. It can be called with di
 - `validate(arrayOfFieldsNames)` - validate multiple fields and stop after the first error
 - `validate(arrayOfFieldsNames, false)` - validate multiple fields and do not stop after the first error
 
-The `validate()` method returns `true` if validation succeeded and `false` if there was any error. Let's take a look at the example usage.
+The `validate()` method returns `true` if validation succeeded and `false` if there was any field that failed validation. Here's an example:
 
 ```js
 var user = new User();
@@ -20,7 +20,7 @@ In the first step, we've created a new user document. In the next line, we check
 
 **Validation on the server**
 
-We should validate a document on both client and server. Let's say, we have a form template that has some events and helpers that create a new document. We can validate such document and display validation errors in the form. However, we can't trust validation on the client. We should always send a given document to the server and repeat validation. We should also send errors back to the client if there're any. Let's take a look at the example of Meteor method that performs validation and returns errors back to the client.
+We should validate a document on both client and server. Let's say we have a form template that has some events and helpers that create a new document. We can validate the document and display validation errors in the form. However, we can't solely trust validation on the client. We should always send a given document to the server and repeat validation. We should also send errors back to the client if there are any. Let's take a look at the example of a Meteor method that performs validation and returns errors back to the client.
 
 ```js
 Meteor.methods({
@@ -36,7 +36,7 @@ Meteor.methods({
 });
 ```
 
-If the validation haven't succeeded, then we send validation errors back to the client using the `throwValidationException()` method. Now, take a look at the example usage of this method.
+If the validation didn't succeed, then we send validation errors back to the client by throwing an error using the `throwValidationException()` method. Now, take a look at how the client can handle this exception.
 
 ```js
 Template.Form.events({
@@ -53,7 +53,7 @@ Template.Form.events({
 });
 ```
 
-In the context of the `Form` template we have our newly created document that was filled with values coming from the form fields. We pass the `used` document as parameter of method. In the callback function, we check if there are any server validation errors. We put these errors back in the document using the `catchValidationException()` method.
+In the context of the `Form` template we have our newly created document that was filled with values coming from the form fields. We pass the `user` document as parameter to our Meteor method. In the callback function, we check if there are any server validation errors thrown. We then put these errors back in the document using the `catchValidationException()` method.
 
 **Optional fields**
 

@@ -1,3 +1,3 @@
 {{#template name="ValidatorsList"}}
-Let's examine available validators and what parameters do they take. They had been divided into six groups.
+Let's examine the available validators and the parameters they take. They had been divided into six groups.
 {{/template}}

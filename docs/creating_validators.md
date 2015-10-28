@@ -1,5 +1,5 @@
 {{#template name="CreatingValidators"}}
-We will describe a process of creating a validator on the example of the `maxLength` validator. Here is the entire code of the validator.
+We will describe the process of creating a validator using the `maxLength` validator as an example. Here is the code for the validator:
 
 ```js
 Astro.createValidator({
@@ -26,9 +26,9 @@ Astro.createValidator({
 
 ```
 
-We have two mandatory attributes. The first one is the `name` attribute. Under this name the validator will be added to the global `Validators` object.
+We have two mandatory attributes. The first one is the `name` attribute. The validator will be added to the global `Validators` object using this name.
 
 The second mandatory attribute is the `validate` function. It should return a boolean value indicating if a value of a given field passes validation. The `validate` function receives three arguments: a field's value, a field name and a param. The param argument can be for instance the number with which we are comparing a field's value. In the example of the `maxLength` validator, the param argument is the `maxLength` of the string.
 
-There is also an optional attribute which is the events object with the definition of the `validationError` event. The `validationError` event receives an event object as the first argument. We should generate an error message on validation fail. To generate an error message just use the `e.setMessage()` method.
+The `maxLength` validator is also an optional attribute `validationError` which is triggered when the `validate` method returns false. The `validationError` event receives an event object as the first argument. Here we can generate an error message on validation failure. To generate an error message just use the `e.setMessage()` method.
 {{/template}}
