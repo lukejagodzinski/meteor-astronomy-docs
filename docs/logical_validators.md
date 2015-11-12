@@ -60,7 +60,7 @@ validators: {
       return this.otherField.length > fieldValue.length
     },
     true: Validators.and([
-      Validators.string()
+      Validators.string(),
       Validators.email()
     ])
   })
