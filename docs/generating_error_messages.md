@@ -12,7 +12,7 @@ User = Astro.Class({
   fields: {
     firstName: {
       type: 'string',
-      validator: Validator.minLength(3, 'The first name is too short!')
+      validator: Validators.minLength(3, 'The first name is too short!')
     }
   }
 });

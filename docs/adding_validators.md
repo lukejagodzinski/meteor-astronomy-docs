@@ -109,24 +109,24 @@ Validators.or([
 ]);
 ```
 
-There are validators that take a single plain value (string, number) as a param. The examples of them are: `minLength`, `equals`, `contains`. We will write more about them in next sections.
+There are validators that take a single plain value (string, number) as a param. The examples of them are: `minLength`, `equal`, `contains`. We will write more about them in next sections.
 
 ```js
 Validators.minLength(3);
-Validators.equals('mustBeEqualToThisString');
+Validators.equal('mustBeEqualToThisString');
 Validators.contains('mustContainThisString');
 ```
 
 There are validators that take array of some values or object with some validator details. The examples of them are: `choice`, `if`. We will write more about them in next sections.
 
 ```js
-Validators.choice(['value', 'has', 'to', 'be', 'equal', 'one', 'of', 'these']);
+Validators.choice(['value', 'has', 'to', 'match', 'one', 'of', 'these']);
 Validators.if({
   condition: function() {
     return this.lastName > 5;
   },
   true: Validators.maxLength(10),
-  false: Validators.minLenght(2)
+  false: Validators.minLength(2)
 });
 ```
 

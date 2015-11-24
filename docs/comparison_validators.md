@@ -35,8 +35,8 @@ validators: {
 Validators.unique();
 ```
 
-The `unique` validator takes no arguments and checks whether the value of the field is unique.<br>[Note: Currently, `unique` should  only be used to validate top level fields.  It will not successfully invalidate a nested field.]
-
+The `unique` validator takes no arguments and checks whether the value of the field is unique.
+Currently the `unique` validator should only be used to validate top level fields. It will not work with nested fields.
 
 ```js
 // Example:

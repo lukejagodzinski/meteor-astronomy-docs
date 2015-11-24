@@ -163,4 +163,10 @@ var populateCollection = function(items, depth) {
 
 Meteor.startup(function() {
   populateCollection(data);
+
+  var route = FlowRouter.current();
+  if (!route.params.slug) {
+    var section = Sections.findOne();
+    FlowRouter.go('/' + section.slug);
+  }
 });
