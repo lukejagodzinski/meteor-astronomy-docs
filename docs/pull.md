@@ -1,5 +1,5 @@
 {{#template name="Pull"}}
-You should always use the `pull()` method to pull values from the fields of array type. Let's take a look at the example.
+You should always use the `pull()` method to pull values from the fields of array type. Let's take a look at the example.  As of version 1.2.3,  `pull()` will return an array of matched items.  If there are no matches the empty array will be returned.
 
 ```js
 Phone = Astro.Class({

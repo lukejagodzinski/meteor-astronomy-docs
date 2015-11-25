@@ -1,5 +1,5 @@
 {{#template name="Pop"}}
-You should always use the `pop()` method to pop values from the fields of array type. Let's take a look at the example.
+You should always use the `pop()` method to pop values from the fields of array type. Let's take a look at the example.  As of version 1.2.3, `pop()` will return the item removed from the array or undefined if there is no such item.
 
 ```js
 Phone = Astro.Class({
