@@ -45,7 +45,7 @@ User = Astro.Class({
   fields: {
     firstName: {
       type: 'string',
-      validator: Validator.minLength(3)
+      validator: Validators.minLength(3)
     }
   },
   events: {
