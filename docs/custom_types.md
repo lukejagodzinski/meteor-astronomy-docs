@@ -6,10 +6,10 @@ Astro.createType({
   name: 'type',
   constructor: function Type(fieldDefinition) {},
   getDefault: function(defaultValue) {},
-  cast function(value) {},
-  needsCast function(value) {},
-  plain function(value) {},
-  needsPlain function(value) {}
+  cast: function(value) {},
+  needsCast: function(value) {},
+  plain: function(value) {},
+  needsPlain: function(value) {}
 });
 ```
 
