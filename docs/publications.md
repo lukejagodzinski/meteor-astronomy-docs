@@ -11,5 +11,5 @@ Meteor.publishComposite('users', {
 });
 ```
 
-If you don't turn off a documents transformation, then it will work anyway. However it will show multiple warnings in the console and it will do a lot of unnecessary work which may cause some bugs in certain situations. You can turn of warnings what is described in the [Warnings](#warnings) section.
+If you don't turn off a documents transformation, then it will work anyway. However it will show multiple warnings in the console and it will do a lot of unnecessary work which may cause some bugs in certain situations. You can turn off warnings as described in the [Warnings](#warnings) section.
 {{/template}}
