@@ -42,7 +42,7 @@ Astro.createType({
 });
 ```
 
-In the `constructor` function, we call the `Astro.BaseField` constructor in the context of our type. It always have to be done.
+In the `constructor` function, we call the `Astro.BaseField` constructor in the context of our type. It always has to be done.
 
 The `needsCast` function is just checking if a value being cast is already a date.
 
