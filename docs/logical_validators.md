@@ -56,7 +56,7 @@ The `if` validator takes an object with some options as the first argument. The 
 // Example:
 validators: {
   someField: Validators.if({
-    if: function(fieldValue, fieldName) {
+    condition: function(fieldValue, fieldName) {
       return this.otherField.length > fieldValue.length
     },
     true: Validators.and([
