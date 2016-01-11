@@ -7,7 +7,7 @@ To create a behavior you have to use the `Astro.createBehavior()` function. As t
 - `options` - an object with behavior options (if any) and default values
 - `createSchemaDefinition` - a function that should return a schema definition that would be used in the `Class.extend()` method.
 
-We will discuss each property in details.
+We will discuss each property in detail.
 
 **Behavior name**
 

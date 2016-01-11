@@ -17,7 +17,7 @@ User = Astro.Class({
 });
 ```
 
-As you can see, an event handler function receives an event object as a first argument. For most events it only contains information about an event name and two useful functions: `e.stopPropagation()` and `e.preventDefault()`. We will talk more about them in next sections.
+As you can see, an event handler function receives an event object as a first argument. For most events it only contains information about an event name and two useful functions: `e.stopPropagation()` and `e.preventDefault()`. The context ```this``` of the event function is the document on which the event was triggered. We will talk more about them in next sections.
 
 **Define events on the global level**
 
