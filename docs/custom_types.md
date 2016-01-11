@@ -1,5 +1,5 @@
 {{#template name="CustomTypes"}}
-You can create custom types by using the `Astro.createType()` method. You have to pass a type definition object as the first argument of the function. The only required property is a type `name`. However, in most cases you will have only to provide `cast` and `plain` methods. Let's take a look at possible properties that you can provide in a type definition.
+You can create custom types by using the `Astro.createType()` method. You have to pass a type definition object as the first argument of the function. The only required property is a type `name`. However, in most cases you would only have to provide `cast` and `plain` methods. Let's take a look at possible properties that you can provide in a type definition.
 
 ```js
 Astro.createType({
