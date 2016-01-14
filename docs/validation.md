@@ -57,5 +57,5 @@ In the context of the `Form` template we have our newly created document that wa
 
 **Optional fields**
 
-As described in the [Optional fields](#optional-fields) section, if a field is marked as `optional` then it won't be validated if its value is `null`.
+As described in the [Optional fields](/optional-fields) section, if a field is marked as `optional` then it won't be validated if its value is `null`.
 {{/template}}
