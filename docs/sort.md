@@ -13,7 +13,7 @@ The `sort` behavior comes with following options.
 behaviors: {
   sort: {
     // The field name that stores position of a document.
-    sortFieldName: 'sort',
+    orderFieldName: 'sort',
     // A flag indicating possibility to store multiple lists per collection.
     hasRootField: false,
     // The field name for storing a value distinguish to which list a given
